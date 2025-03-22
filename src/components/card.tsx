@@ -4,13 +4,7 @@ import { LucideIcon } from "lucide-react";
 import * as react from 'react';
 import { IconType } from "react-icons/lib";
 import { IconTooltip } from "./icon-tooltip";
-
-
-export type iconItem={
-  icon:LucideIcon|IconType;
-  name:string;
-  color:string;
-}
+import { iconItem } from "@/common/types/cards";
 
 type CardProps = {
   icon: LucideIcon | IconType;
@@ -25,9 +19,6 @@ type CardProps = {
   className?: string;
   items?: iconItem[] ;
 };
-
-
-
 
 export default function CustomCard({
   icon,

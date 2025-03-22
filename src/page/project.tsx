@@ -6,7 +6,6 @@ import { SiTypescript, SiShadcnui, SiJavascript, SiBootstrap, SiReactrouter, SiZ
 import { RiTailwindCssFill } from "react-icons/ri";
 export function Projects(){
 
-
   const data=[
     {
       title:"Calc VLSM and Subnetting",

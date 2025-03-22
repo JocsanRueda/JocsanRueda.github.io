@@ -1,13 +1,11 @@
 import { cn } from "@/lib/utils";
-import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@radix-ui/react-tooltip";
-import { iconItem } from "./card";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { useState } from "react";
+import { iconItem } from "@/common/types/cards";
 
 export function IconTooltip({item}: {item:iconItem}){
   const IconComponent = item.icon;
   const [hobered, setHovered] = useState(false)
-
-
 
   const handleMouseEnter = () => setHovered(true);
   const handleMouseLeave = () => setHovered(false);

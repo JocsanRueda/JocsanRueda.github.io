@@ -1,7 +1,7 @@
 import { CardContent, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { IconTooltip } from "./icon-tooltip";
-import { iconItem } from "./card";
+import { iconItem } from "@/common/types/cards";
 
 type CardProps = {
   title: string;

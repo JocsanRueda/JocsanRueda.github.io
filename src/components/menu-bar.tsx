@@ -8,7 +8,6 @@ import { Switch } from "@/components/ui/switch"
 import { useTheme } from "./theme-provider"
 import { Link } from "react-router-dom"
 
-
 export function MenuBar() {
 
   const { setTheme,theme } = useTheme()
@@ -44,14 +43,9 @@ export function MenuBar() {
       url:'#'
     }
   ]
-
  
   return (
     <div className=" flex justify-end border-b border-dashed">
-  
-        
-     
-
         
       <NavigationMenu className="mx-2 my-0.5" >
 
@@ -66,19 +60,13 @@ export function MenuBar() {
             ))
           }
           
-          
-          
-          
           <NavigationMenuItem>
             <NavigationMenuLink href="#" className="font-light" onClick={handleClick}><Switch checked={theme==='dark'}/></NavigationMenuLink>
           </NavigationMenuItem>
-
-         
           
         </NavigationMenuList>
           
       </NavigationMenu>
-      
      
     </div>
   )

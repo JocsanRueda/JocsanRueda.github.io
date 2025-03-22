@@ -1,4 +1,3 @@
-
 import GlowBackground from './components/glow-background'
 import HeroSection from './components/hero-section'
 import Layout from './components/layout'
@@ -7,12 +6,10 @@ import ParticlesBackGround from './components/particles-background'
 import { ThemeProvider } from './components/theme-provider'
 import { Experience } from './page/experience'
 import { Expertise } from './page/expertise'
-import { Projects } from './page/projects'
+import { Projects } from './page/project'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 
 function App() {
-
-
 
   return (
     <>
@@ -30,15 +27,8 @@ function App() {
             </Routes>
           </Layout>
         </Router>
-
-        
-         
-         
-
-        
         <ParticlesBackGround />
         <GlowBackground/>
-        
       </ThemeProvider>
       
     </>

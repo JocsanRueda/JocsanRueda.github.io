@@ -2,7 +2,6 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
-import prettierConfig from "eslint-config-prettier";
 import unusedImports from "eslint-plugin-unused-imports";
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -13,7 +12,6 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
-  prettierConfig, // Agrega la configuración de Prettier
   {
     plugins: {
       "unused-imports": unusedImports
@@ -39,7 +37,9 @@ export default [
           args: "after-used",
           argsIgnorePattern: "^_"
         }
-      ]
+      ],
+      "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 0, maxBOF: 0 }]
+   
     },
   },
 ];

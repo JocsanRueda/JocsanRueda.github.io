@@ -1,11 +1,9 @@
-
 import CustomCard from "@/components/card"
 import {SiJest,SiSwagger, SiTypescript, SiCss3, SiHtml5,SiShadcnui, SiJavascript, SiBootstrap, SiNestjs, SiCplusplus, SiPython, SiOctave} from "react-icons/si"
 import {FaAws, FaGit, FaGithub, FaJava, FaLinux, FaReact, FaServer, FaWindows} from "react-icons/fa"
 import { MdComputer } from "react-icons/md";
 import { VscVscode } from "react-icons/vsc";
 export function Expertise(){
-
 
   const data=[
     {
@@ -44,7 +42,6 @@ export function Expertise(){
       ]
   
     },
-
    
     {
       icon:FaServer,
@@ -169,8 +166,6 @@ export function Expertise(){
     } 
   ]
 
-
-
   return <div className=" min-h-screen flex flex-col justify-center items-center gap-5 ">
     <div>
       <h1 className="text-4xl font-bold ">My Expertise</h1>
@@ -180,7 +175,6 @@ export function Expertise(){
       <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-2 ">
         {
           data.map((item)=>(
-
 
             <CustomCard key={item.title}
               icon={item.icon} 
@@ -195,13 +189,6 @@ export function Expertise(){
           ))
         }
       </div>
-    
-
-
-      
-      
-      
-
 
     </div>
 

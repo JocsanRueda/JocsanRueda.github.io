@@ -22,7 +22,6 @@ export default function HeroSection() {
             }
           )}>software Engineer, Full-stack Developer</p>
         </div>
-        
        
         <Button className={cn("mt-6 border  text-teal-30 bg-teal-300text-black",
           (theme==="dark"?"border-teal-300":"border-gray-700")
