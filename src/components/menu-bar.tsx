@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Switch } from "@/components/ui/switch"
 import { useTheme } from "./theme-provider"
+import { Link } from "react-router-dom"
 
 
 export function MenuBar() {
@@ -20,6 +21,30 @@ export function MenuBar() {
     }
   }
 
+  const links=[
+
+    {
+      name:'Home',
+      url:'/'
+    },
+    {
+      name:'skills',
+      url:'/expertise'
+    },
+    {
+      name:'experience',
+      url:'/experience'
+    },
+    {
+      name:'projects',
+      url:'/projects'
+    },
+    {
+      name:'contact',
+      url:'#'
+    }
+  ]
+
  
   return (
     <div className=" flex justify-end border-b border-dashed">
@@ -32,25 +57,15 @@ export function MenuBar() {
 
         <NavigationMenuList className="  text-sm gap-1 md:gap-4">
 
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/" className="font-light" >home</NavigationMenuLink>
-          </NavigationMenuItem>
+          {
+            links.map((link)=>(
+              <NavigationMenuItem key={link.name}>
+                <NavigationMenuLink className="font-light" ><Link to={link.url}>{link.name}</Link></NavigationMenuLink>
+              </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/expertise" className="font-light" >skills</NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/experiense" className="font-light" >experience</NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/projects" className="font-light" >projecs</NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink href="#" className="font-light" >contact</NavigationMenuLink>
-          </NavigationMenuItem>
+            ))
+          }
+          
           
           
           
