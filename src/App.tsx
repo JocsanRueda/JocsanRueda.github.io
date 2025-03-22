@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme"> 
-        <Router>
+        <Router basename='/'>
           <Layout>
                      
             <MenuBar/>
