@@ -1,3 +1,4 @@
+import BlurBackground from './components/blur-background'
 import GlowBackground from './components/glow-background'
 import HeroSection from './components/hero-section'
 import Layout from './components/layout'
@@ -15,8 +16,8 @@ function App() {
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme"> 
         <Router basename='/'>
+          <BlurBackground/>
           <Layout>
-                     
             <MenuBar/>
             <Routes>
               <Route path="/" element={<HeroSection/>}/>
@@ -26,6 +27,7 @@ function App() {
 
             </Routes>
           </Layout>
+          
         </Router>
         <ParticlesBackGround />
         <GlowBackground/>

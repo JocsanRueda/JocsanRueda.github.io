@@ -80,27 +80,29 @@ export function Projects(){
 
     <div className="min-h-screen flex flex-col justify-center items-center gap-5 ">
       <div>
-        <h1 className="text-4xl font-bold ">My Projects</h1>
-      </div>
-      <div className="flex  w-full justify-center  px-5  gap-1" >
-        <div className="grid grid-cols-1  lg:grid-cols-2 gap-2 ">
+        <div>
+          <h1 className="text-4xl font-bold ">My Projects</h1>
+        </div>
+        <div className="flex  w-full justify-center  px-5  gap-1" >
+          <div className="grid grid-cols-1  lg:grid-cols-2 gap-2 ">
 
-          {
-            data.map((item)=>{
+            {
+              data.map((item)=>{
 
-              return <CardProjects key={item.title}
+                return <CardProjects key={item.title}
            
-                title={item.title}
-                subtitle={item.subtitle} 
-                className="border rounded-md opacity-85 grow-1" 
-                lineColor="bg-blue-900"
-                imageUrl={item.imageUrl}
-                icons={item.icons}
-                url={item.url}
-              />
-            })
-          }
+                  title={item.title}
+                  subtitle={item.subtitle} 
+                  className="border rounded-md opacity-85 grow-1" 
+                  lineColor="bg-blue-900"
+                  imageUrl={item.imageUrl}
+                  icons={item.icons}
+                  url={item.url}
+                />
+              })
+            }
 
+          </div>
         </div>
       </div>
     </div>

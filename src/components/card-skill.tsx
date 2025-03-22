@@ -1,7 +1,6 @@
 import { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
-import * as react from 'react';
 import { IconType } from "react-icons/lib";
 import { IconTooltip } from "./icon-tooltip";
 import { iconItem } from "@/common/types/cards";
@@ -12,34 +11,33 @@ type CardProps = {
   subtitle: string;
   description: string;
   footer?: string;
-  bgColor?: string;
-  textColor?: string;
   borderColor?: string;
   lineColor?: string;
   className?: string;
   items?: iconItem[] ;
 };
 
-export default function CustomCard({
+export default function CardSkill({
   icon,
   title,
   subtitle,
   description,
   footer,
-  bgColor = "bg-black",
-  textColor = "text-white",
   lineColor = "blue",
   className="",
   items
 }: CardProps) {
+
+  const Icon=icon;
   
   return (
-    <div className={cn(`${bgColor} ${textColor} p-6  max-w-sm flex flex-col gap-5 justify-between hover:border-current hover:border-dashed transition-all`,className)}>
+    <div className={cn(`bg-black  text-white  p-6  max-w-sm flex flex-col gap-5 justify-between border rounded-md  border-gray-900`,className)}>
       <CardHeader className="flex flex-row items-center gap-3">
-        <span>{react.createElement(icon, { size: 36, className: textColor })}</span>
+        
+        <Icon size={36} />
         <div className="flex flex-col">
           <CardTitle className="flex flex-col"><p className="z-10 text-2xl">{title}</p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0  ",
-            lineColor
+            `bg-${lineColor}-900`
           )}></span></CardTitle>
           <CardDescription>{subtitle}</CardDescription>
         </div>

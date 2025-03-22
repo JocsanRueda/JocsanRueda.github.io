@@ -1,18 +1,19 @@
-import CustomCard from "@/components/card"
 import {SiJest,SiSwagger, SiTypescript, SiCss3, SiHtml5,SiShadcnui, SiJavascript, SiBootstrap, SiNestjs, SiCplusplus, SiPython, SiOctave} from "react-icons/si"
 import {FaAws, FaGit, FaGithub, FaJava, FaLinux, FaReact, FaServer, FaWindows} from "react-icons/fa"
 import { MdComputer } from "react-icons/md";
 import { VscVscode } from "react-icons/vsc";
+import CardSkill from "@/components/card-skill";
+import { Braces, Swords } from "lucide-react";
 export function Expertise(){
 
   const data=[
     {
-      icon:FaServer,
+      icon:Swords,
       title: "Teck Stack",
       subtitle: "Development",
       Description:"VsCode, Git, GitHub, linux and more",
-      classname:"border-t border-b opacity-90 rounded ",
-      lineColor:"bg-orange-900",
+
+      lineColor:"orange",
       stacks : [
         {
           icon:FaWindows,
@@ -44,12 +45,12 @@ export function Expertise(){
     },
    
     {
-      icon:FaServer,
+      icon:Braces,
       title: "Other Languajes",
       subtitle: "Development",
       Description:"Proficient in C++, Python, Java, and Octave",
-      classname:"border-t border-b opacity-90 rounded ",
-      lineColor:"bg-green-900",
+
+      lineColor:"green",
       stacks : [
         {
           icon:SiCplusplus,
@@ -83,8 +84,8 @@ export function Expertise(){
       title: "Backend",
       subtitle: "Development",
       Description:"Proficient in building and optimizing backend services using NestJS, TypeScript, and AWS. Experience with authentication, API Gateway, and database management.",
-      classname:"border-t border-b opacity-90 rounded ",
-      lineColor:"bg-blue-900",
+
+      lineColor:"blue",
       stacks : [
         {
           icon:SiNestjs,
@@ -121,8 +122,8 @@ export function Expertise(){
       subtitle: "Development",
       Description:"Passionate about UI/UX. Experienced in developing modern, responsive interfaces using React, NextJS, TailwindCSS, and Radix UI.",
       footer:"Focused on creating intuitive and accessible designs.",
-      classname:"border-t border-b opacity-90 rounded ",
-      lineColor:"bg-red-900",
+
+      lineColor:"red",
       stacks : [
         {
           icon:FaReact,
@@ -176,13 +177,13 @@ export function Expertise(){
         {
           data.map((item)=>(
 
-            <CustomCard key={item.title}
+            <CardSkill key={item.title}
               icon={item.icon} 
               title={item.title}
               subtitle={item.subtitle}
               description={item.Description}
               footer={item.footer}
-              className={item.classname}
+              className="opacity-85"
               lineColor={item.lineColor}
               items={item.stacks}
             />

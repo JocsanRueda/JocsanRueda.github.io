@@ -23,13 +23,13 @@ export default function GlowBackground() {
 
   return (
     <div
-      className="fixed inset-0 w-full h-full pointer-events-none"
+      className="fixed inset-0 w-full h-full pointer-events-none "
   
       style={{
     
         background: `radial-gradient(circle at ${position.x} ${position.y}, ${gradient}, rgba(0, 0, 0, 0.1))`,
         transition: "background 0.1s ease-out",
-        zIndex: -1,
+        zIndex: 10,
         
       }}
     />

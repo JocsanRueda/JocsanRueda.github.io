@@ -1,6 +1,5 @@
 import type { ISourceOptions } from "tsparticles-engine";
 
-
 const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISourceOptions=>{
   return {
 
@@ -20,7 +19,7 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
           enable: true,
           mode: "grab",
         },
-        resize: true,
+        resize: false,
       },
       modes: {
         push: {
@@ -30,7 +29,10 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
           distance: 100,
           duration: 1,
         },
+      
       },
+      detect_on: "window",
+ 
     },
     particles: {
       color: {

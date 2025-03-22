@@ -25,12 +25,14 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar >
-      <SidebarContent className="flex flex-col justify-end ">
+    <Sidebar className="border-r border-dashed backdrop-blur-[2px]  z-10">
+      <SidebarContent className="flex flex-col justify-end  ">
+        <div className="border-t mt-10 border-dashed mb-auto"/>
         <SidebarGroup>
           
           <SidebarGroupContent>
-            <SidebarMenu className="">
+            
+            <SidebarMenu >
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
@@ -41,6 +43,7 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
