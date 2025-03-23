@@ -7,6 +7,7 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
       color: {
         value: bgColor,
       },
+      
     },
     fpsLimit: 60,
     interactivity: {
@@ -35,6 +36,7 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
  
     },
     particles: {
+      
       color: {
         value: pColor
       },

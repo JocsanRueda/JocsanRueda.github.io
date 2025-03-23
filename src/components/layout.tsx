@@ -4,8 +4,8 @@ import { AppSidebar } from "@/components/app-sidebar"
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
 
-    <SidebarProvider className="flex flex-row h-screen overflow-hidden justify-center ">
-      
+    <SidebarProvider className="flex flex-row  overflow-hidden justify-center ">
+      {/**add h-screen */}
       <AppSidebar  />
        
       <main className="flex-grow">

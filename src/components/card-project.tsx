@@ -2,40 +2,43 @@ import { CardContent, CardDescription, CardFooter, CardTitle } from "@/component
 import { cn } from "@/lib/utils";
 import { IconTooltip } from "./icon-tooltip";
 import { iconItem } from "@/common/types/cards";
+import { useNavigate } from "react-router-dom";
 
 type CardProps = {
+  id:string,
   title: string;
   subtitle: string;
-  bgColor?: string;
-  textColor?: string;
   lineColor?: string;
   className?: string;
   imageUrl: string;
   icons: iconItem[];
-  url:string;
 };
 
 export default function CardProjects({
+  id,
   title,
   subtitle,
-  bgColor = "bg-black",
-  textColor = "text-white",
   lineColor = "blue",
   className="",
   imageUrl,
   icons,
-  url,
 }: CardProps) {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/projects/${id}`);
+  }
   
   return (
-    <div className={cn(`${bgColor} ${textColor}  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-5 `,className)}>
+    <div className={cn(`bg-black  text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-5 border rounded-md  border-gray-900`,className)} id={id} onClick={handleClick}>
 
-      <CardContent className="-px-6 overflow-hidden">
-        <img src={imageUrl} alt="image" className="rounded-t-lg transition-transform duration-300 ease-in-out transform hover:scale-115" />
+      <CardContent className="-px-6 overflow-hidden rounded-t-md">
+        <img src={imageUrl} alt="image" className=" -rounded-t-md transition-transform duration-300 ease-in-out transform hover:scale-115 " />
       </CardContent>
       <CardFooter className="mb-3 flex flex-col items-start">
         <div className="flex flex-col ">
-          <CardTitle className="flex flex-col"><a className="z-10 text-2xl" href={url} >{title} </a> <span className={cn("p-1.5 -mt-2.5 z-0  ",
+          <CardTitle className="flex flex-col"><p className="z-10 text-2xl"  >{title} </p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0   ",
             lineColor
           )}></span></CardTitle>
           <CardDescription>{subtitle}</CardDescription>

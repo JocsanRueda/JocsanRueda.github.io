@@ -37,7 +37,7 @@ export default function CardSkill({
         <Icon size={36} />
         <div className="flex flex-col">
           <CardTitle className="flex flex-col"><p className="z-10 text-2xl">{title}</p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0  ",
-            `bg-${lineColor}-900`
+            lineColor
           )}></span></CardTitle>
           <CardDescription>{subtitle}</CardDescription>
         </div>
