@@ -21,10 +21,13 @@ import {
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { data } from "@/data/experience.data";
 import { IconTooltip } from "@/components/icon-tooltip";
+import { useParams } from "react-router-dom";
 
 export function ExperienceDetail() {
+
+  const { id } = useParams<{ id: string }>(); 
   
-  const experience = data[0]
+  const experience = data.find((item) => item.id === id);
 
   if (!experience) {
     return (
@@ -55,10 +58,10 @@ export function ExperienceDetail() {
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{experience.company}</h1>
           <p className="text-xl dark:text-gray-300 mb-6">{experience.position}</p>
-          
+
           <div className="flex flex-wrap gap-2 mb-6">
-            {experience.skills.map((skill) => (
-              <IconTooltip item={skill} key={skill.name }/>
+            {experience.stack.map((item) => (
+              <IconTooltip item={item} key={item.name}/>
             ))}
           </div>
           
@@ -121,11 +124,11 @@ export function ExperienceDetail() {
                 </div>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {experience.responsibilities.map((responsibility, index) => (
                     <li key={index} className="flex items-start">
                       <Dot />
-                      <span className="text-gray-300">{responsibility}</span>
+                      <span className="text-gray-300"><strong>{responsibility.split(':')[0]}</strong>: {responsibility.split(':')[1]}</span>
                     </li>
                   ))}
                 </ul>
@@ -145,10 +148,10 @@ export function ExperienceDetail() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {experience.achievements.map((achievement, index) => (
                       <li key={index} className="flex items-start">
-                        <Dot />
+                        <Dot/>
                         <span className="text-gray-300">{achievement}</span>
                       </li>
                     ))}

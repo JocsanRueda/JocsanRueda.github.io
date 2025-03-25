@@ -4,31 +4,36 @@ import {
   Server,
   PenTool
 } from "lucide-react";
+import { FaAws } from "react-icons/fa";
+import { SiNestjs, SiTypescript, SiJest, SiSwagger,SiJira, SiNodedotjs } from "react-icons/si";
+import { BsMicrosoftTeams } from "react-icons/bs";
+import { VscVscode } from "react-icons/vsc";
 
 export const data = [
   {
     icon:Layout,
     lineColor:"bg-blue-900",
-    id: "empresa1",
-    company: "Empresa Tecnológica S.A.",
-    position: "Desarrollador Full Stack Senior",
-    period: "Enero 2021 - Presente",
-    contractType: "Tiempo Completo",
-    location: "Ciudad, País",// Opcional: ruta a la imagen de la empresa
-    description: "Como desarrollador Full Stack Senior, soy responsable del diseño e implementación de soluciones tecnológicas robustas y escalables. Trabajo en estrecha colaboración con equipos multidisciplinarios para crear aplicaciones web innovadoras que satisfacen las necesidades de nuestros clientes.",
+    id: "guababit",
+    company: "Guababit",
+    position: "Desarrollador Junior Backend ",
+    period: "Octubre/2024 - Marzo/2025",
+    contractType: "Contrato de prácticas",
+    location: "Remoto",// Opcional: ruta a la imagen de la empresa
+    description: "Participé en el desarrollo backend de aplicaciones web utilizando NestJS, AWS Lambda, DynamoDB y API Gateway, implementando arquitecturas serverless para mejorar el rendimiento y la escalabilidad. Diseñé y mantuve APIs seguras y eficientes, integrando servicios en la nube como S3 y Cognito para almacenamiento y autenticación, optimizando la gestión de datos y usuarios. Además, trabajé en la implementación de pruebas unitarias con Jest, mejorando la calidad del código y reduciendo errores en producción. Colaboré dentro de un entorno ágil con Scrum, participando en revisiones de código, reuniones diarias y sprints, asegurando entregas iterativas y eficientes",
     responsibilities: [
-      "Desarrollar y mantener aplicaciones web utilizando React y Node.js",
-      "Diseñar e implementar APIs RESTful",
-      "Optimizar el rendimiento y la escalabilidad de las aplicaciones",
-      "Colaborar con el equipo de diseño para implementar interfaces de usuario atractivas y funcionales",
-      "Realizar revisiones de código y mentorías a desarrolladores junior",
-      "Implementar pruebas unitarias y de integración"
+      "Desarrollo de Construcción y Mantenimiento de Servicios Backend: Creación de controladores, servicios y repositorios (repo.ts) en NestJS, siguiendo principios de arquitectura limpia y buenas prácticas de desarrollo",
+      "Definición de Esquemas: Diseño y estructuración de modelos de datos para DynamoDB, asegurando una gestión eficiente de la información.",
+      "Pruebas Unitarias: Implementación de pruebas con Jest para garantizar la calidad del código y prevenir errores en producción",
+      "Optimización de Implementaciones: Investigación y aplicación de soluciones eficientes para mejorar el rendimiento, escalabilidad y seguridad de las APIs",
+      "Integración con AWS: Uso de Lambda, API Gateway, S3 y Cognito para desarrollar soluciones serverless robustas y escalables.",
+      "Trabajo en Metodología Ágil: Participación en revisiones de código, reuniones diarias y sprints dentro de un entorno Scrum",
+      "Revisión de Código: Evaluación y mejora de código en pull requests, asegurando el cumplimiento de estándares y buenas prácticas."
     ],
     achievements: [
-      "Reduje el tiempo de carga de la aplicación principal en un 40% mediante la implementación de técnicas de optimización",
-      "Lideré la migración exitosa de una arquitectura monolítica a microservicios",
-      "Implementé un sistema de CI/CD que redujo el tiempo de despliegue en un 60%",
-      "Recibí el premio al 'Empleado del Año' en 2022"
+      "Implementación exitosa de un servicio clave en un proyecto, asegurando su correcto funcionamiento y escalabilidad en un entorno serverless con NestJS y AWS Lambda",
+      "Investigación e implementación efectiva de un sistema de autenticación, integrando AWS Cognito para mejorar la seguridad y gestión de usuarios",
+      "Desarrollo e integración exitosa de ImportJobs para AWS Cognito, facilitando la importación y administración eficiente de usuarios en la plataforma",
+      "Desarrollo e implementación de una solución de paginación eficiente para consultas en DynamoDB."
     ],
     skills: [
       { name: "Frontend", icon: Layout, color: "bg-blue-900 text-blue-100", description: "Desarrollo de interfaces de usuario modernas y responsivas" },
@@ -38,10 +43,55 @@ export const data = [
     technologies: [
       "React", "Node.js", "TypeScript", "MongoDB", "Express", "Redux", "Next.js", "GraphQL", "Docker", "AWS"
     ],
-    linkedinUrl: "https://linkedin.com/company/empresa1",
-    companyUrl: "https://www.empresa1.com",
-    contactEmail: "contacto@empresa1.com",
-    contactLinkedin: "https://linkedin.com/in/tu-perfil"
+    linkedinUrl: "https://www.linkedin.com/company/guababit/",
+    companyUrl: "https://guababit.com/",
+    contactLinkedin: "https://linkedin.com/in/tu-perfil",
+    stack:[
+      {
+        icon:SiNestjs,
+        name:"NestJS",
+        color:"bg-red-600"
+      },{
+        icon: SiNodedotjs,
+        name:"node",
+        color:"bg-green-600"
+      },
+      {
+        icon:SiTypescript,
+        name:"TypeScript",
+        color:"bg-blue-600"
+      },
+      {
+        icon:SiJest,
+        name:"Jest",
+        color:"bg-green-600"
+                   
+      },
+      {
+        icon:SiSwagger,
+        name:"Swagger",
+        color:"bg-green-600"
+                   
+      },
+      {
+        icon: FaAws,
+        name:"AWS",
+        color:"bg-yellow-600"
+                   
+      },{
+        icon: BsMicrosoftTeams,
+        name:"Teams",
+        color:"bg-purple-600"
+      },{
+        icon: SiJira,
+        name:"Jira",
+        color:"bg-blue-600"
+      },{
+        icon: VscVscode,
+        name:"vscode",
+        color:"bg-blue-600"
+      }
+    ]
   },
   {
     icon:Server,
@@ -76,7 +126,53 @@ export const data = [
     linkedinUrl: "https://linkedin.com/company/empresa2",
     companyUrl: "https://www.empresa2.com",
     contactEmail: "contacto@empresa2.com",
-    contactLinkedin: "https://linkedin.com/in/tu-perfil"
+    contactLinkedin: "https://linkedin.com/in/tu-perfil",
+    stack:[
+      {
+        icon:SiNestjs,
+        name:"NestJS",
+        color:"bg-red-600"
+      },{
+        icon: SiNodedotjs,
+        name:"nodess",
+        color:"bg-green-600"
+      },
+      {
+        icon:SiTypescript,
+        name:"TypeScript",
+        color:"bg-blue-600"
+      },
+      {
+        icon:SiJest,
+        name:"Jest",
+        color:"bg-green-600"
+                   
+      },
+      {
+        icon:SiSwagger,
+        name:"Swagger",
+        color:"bg-green-600"
+                   
+      },
+      {
+        icon: FaAws,
+        name:"AWS",
+        color:"bg-yellow-600"
+                   
+      },{
+        icon: BsMicrosoftTeams,
+        name:"Teams",
+        color:"bg-purple-600"
+      },{
+        icon: SiJira,
+        name:"Jira",
+        color:"bg-blue-600"
+      },{
+        icon: VscVscode,
+        name:"vscode",
+        color:"bg-blue-600"
+      }
+    ]
   }
   // Puedes añadir más experiencias siguiendo la misma estructura
 ];
