@@ -28,9 +28,9 @@ function App() {
             <Routes>
               <Route path={routeEnum.HOME} element={<HeroSection/>}/>
               <Route path={routeEnum.PROJECTS} element={<Projects/>}/>
-              <Route path={`${routeEnum.PROJECTS} /:id`} element={<ProjectDetail/>}/>
+              <Route path={`${routeEnum.PROJECTS}/:id`} element={<ProjectDetail/>}/>
               <Route path={routeEnum.EXPERIENCE} element={<Experience/>}/>
-              <Route path={`${routeEnum.EXPERIENCE} /:id`}  element={<ExperienceDetail/>}/>
+              <Route path={`${routeEnum.EXPERIENCE}/:id`}  element={<ExperienceDetail/>}/>
               <Route path={routeEnum.EXPERTISE} element={<Expertise/>}/>
 
               <Route path={routeEnum.CONTACT} element={<ContactPage/>}/>

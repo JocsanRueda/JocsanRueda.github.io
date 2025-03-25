@@ -25,8 +25,6 @@ import { useParams } from "react-router-dom";
 export function ProjectDetail() {
 
   const { id } = useParams<{ id: string }>(); 
-
-  console.log(id);
   
   const project = data.find((item) => item.id === id);
 
