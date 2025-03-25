@@ -1,5 +1,6 @@
 import { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { routeEnum } from "@/shared/route.enum";
 import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons/lib";
 import { useNavigate } from "react-router-dom";
@@ -32,7 +33,7 @@ export default function CardExperience({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/experience/${id}`);
+    navigate(`${routeEnum.EXPERIENCE}/${id}`);
   }
   
   return (
