@@ -13,6 +13,7 @@ import { Projects } from '@/page/project'
 import { Experience } from './page/experience'
 import ExperienceDetail from './components/experience-detail'
 import { routeEnum } from './shared/route.enum'
+import ContactPage from './page/contact'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
               <Route path={`${routeEnum.EXPERIENCE} /:id`}  element={<ExperienceDetail/>}/>
               <Route path={routeEnum.EXPERTISE} element={<Expertise/>}/>
 
+              <Route path={routeEnum.CONTACT} element={<ContactPage/>}/>
             </Routes>
           </Layout>
           

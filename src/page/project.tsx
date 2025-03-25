@@ -4,7 +4,7 @@ export function Projects(){
 
   return (
 
-    <div className="min-h-screen flex flex-col justify-center items-center gap-7 my-2 ">
+    <div className="min-h-screen flex flex-col justify-center items-center gap-7 my-2 mx-5">
       
       <div>
         <h1 className="text-4xl font-bold ">My Projects</h1>

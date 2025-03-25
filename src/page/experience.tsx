@@ -2,7 +2,7 @@ import CardExperience from "@/components/card-experience";
 import { data } from "@/data/experience.data";
 export function Experience(){
 
-  return <div className=" min-h-screen flex flex-col justify-center items-center gap-5 ">
+  return <div className=" min-h-screen flex flex-col justify-center items-center gap-5 mx-5 ">
     <div>
       <h1 className="text-4xl font-bold ">My Expertise</h1>
     </div>
