@@ -3,41 +3,31 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { FaGithub, FaLinkedin } from "react-icons/fa"
-
-// Menu items.
-const items = [
-  {
-    title: "Github",
-    url: "#",
-    icon: FaGithub,
-  },
-  {
-    title: "Linkedin",
-    url: "#",
-    icon: FaLinkedin,
-  }
-]
+import { data } from "@/data/menu-bar.data"
 
 export function AppSidebar() {
   return (
     <Sidebar className="border-r border-dashed backdrop-blur-[2px]  z-10">
-      <SidebarContent className="flex flex-col justify-end  ">
-        <div className="border-t mt-10 border-dashed mb-auto"/>
+
+      <SidebarContent className="flex flex-col  ">
+
         <SidebarGroup>
+          <SidebarGroupLabel>Menu</SidebarGroupLabel>
           
           <SidebarGroupContent>
             
             <SidebarMenu >
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+              {data.map((item) => (
+                <SidebarMenuItem key={item.name}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
                       <item.icon />
+                      {item.name}
                        
                     </a>
                   </SidebarMenuButton>

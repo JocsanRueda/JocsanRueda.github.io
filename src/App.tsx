@@ -20,10 +20,12 @@ function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme"> 
-  
+    
         <Router basename='/'>
           <BlurBackground/>
+        
           <Layout>
+         
             <MenuBar/>
             <Routes>
               <Route path={routeEnum.HOME} element={<HeroSection/>}/>
