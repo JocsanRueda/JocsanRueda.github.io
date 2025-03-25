@@ -9,7 +9,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { data } from "@/data/menu-bar.data"
-
+import {Link } from "react-router-dom"
 export function AppSidebar() {
   return (
     <Sidebar className="border-r border-dashed backdrop-blur-[2px]  z-10">
@@ -25,11 +25,11 @@ export function AppSidebar() {
               {data.map((item) => (
                 <SidebarMenuItem key={item.name}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link to={item.url}>
                       <item.icon />
                       {item.name}
                        
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
