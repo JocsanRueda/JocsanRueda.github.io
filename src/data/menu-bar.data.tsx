@@ -1,23 +1,25 @@
+import { routeEnum } from "@/shared/route.enum";
+
 export const data=[
 
   {
-    name:'Home',
-    url:'/'
+    name:'Inicio',
+    url:routeEnum.HOME
   },
   {
-    name:'skills',
-    url:'/expertise'
+    name:'Habilidades',
+    url:routeEnum.EXPERTISE
   },
   {
-    name:'experience',
-    url:'/experience'
+    name:'Experiencia',
+    url:routeEnum.EXPERIENCE
   },
   {
-    name:'projects',
-    url:'/projects'
+    name:'Proyectos',
+    url:routeEnum.PROJECTS
   },
   {
-    name:'contact',
-    url:'#'
+    name:'Contacto',
+    url:routeEnum.CONTACT
   }
 ]

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { routeEnum } from "@/shared/route.enum";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -7,12 +8,13 @@ export default function BlurBackground() {
   const location=useLocation()
   
   const [blur, setBlur] = useState(0);
+  const routerBlurSm=[routeEnum.EXPERTISE,routeEnum.PROJECTS ]
   
   useEffect(()=>{
     
-    if(location.pathname==="/")
+    if(location.pathname===routeEnum.HOME)
       setBlur(0)
-    else if( ["/expertise","/projects"].includes (location.pathname))
+    else if( routerBlurSm.includes(location.pathname as routeEnum))
       setBlur(2)
     else{
       setBlur(4)

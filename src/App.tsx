@@ -12,6 +12,7 @@ import { Expertise } from '@/page/expertise'
 import { Projects } from '@/page/project'
 import { Experience } from './page/experience'
 import ExperienceDetail from './components/experience-detail'
+import { routeEnum } from './shared/route.enum'
 
 function App() {
 
@@ -24,12 +25,12 @@ function App() {
           <Layout>
             <MenuBar/>
             <Routes>
-              <Route path="/" element={<HeroSection/>}/>
-              <Route path="/projects" element={<Projects/>}/>
-              <Route path="/projects/:id" element={<ProjectDetail/>}/>
-              <Route path="/experience" element={<Experience/>}/>
-              <Route path="/experience/:id" element={<ExperienceDetail/>}/>
-              <Route path="/expertise" element={<Expertise/>}/>
+              <Route path={routeEnum.HOME} element={<HeroSection/>}/>
+              <Route path={routeEnum.PROJECTS} element={<Projects/>}/>
+              <Route path={`${routeEnum.PROJECTS} /:id`} element={<ProjectDetail/>}/>
+              <Route path={routeEnum.EXPERIENCE} element={<Experience/>}/>
+              <Route path={`${routeEnum.EXPERIENCE} /:id`}  element={<ExperienceDetail/>}/>
+              <Route path={routeEnum.EXPERTISE} element={<Expertise/>}/>
 
             </Routes>
           </Layout>
