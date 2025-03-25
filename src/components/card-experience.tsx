@@ -2,10 +2,10 @@ import { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from 
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons/lib";
-import { IconTooltip } from "./icon-tooltip";
-import { iconItem } from "@/common/types/cards";
+import { useNavigate } from "react-router-dom";
 
 type CardProps = {
+  id: string;
   icon?: LucideIcon | IconType;
   title: string;
   subtitle: string;
@@ -14,10 +14,10 @@ type CardProps = {
   borderColor?: string;
   lineColor?: string;
   className?: string;
-  items?: iconItem[] ;
 };
 
-export default function CardSkill({
+export default function CardExperience({
+  id,
   icon,
   title,
   subtitle,
@@ -25,13 +25,18 @@ export default function CardSkill({
   footer,
   lineColor = "blue",
   className="",
-  items
 }: CardProps) {
 
   const Icon=(icon as LucideIcon | IconType) || null  ;
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/experience/${id}`);
+  }
   
   return (
-    <div className={cn(`bg-black  text-white  p-6  max-w-sm flex flex-col gap-5 justify-between border rounded-md  border-gray-900`,className)}>
+    <div className={cn(`bg-black  text-white  p-6   flex flex-col gap-5 justify-between border rounded-md  border-gray-900 max-w-5xl  cursor-pointer hover:border-gray-700 transition-all`,className)} id={id} onClick={handleClick}>
       <CardHeader className="flex flex-row items-center gap-3">
         
         {Icon && <Icon size={36} />}
@@ -47,13 +52,7 @@ export default function CardSkill({
       </CardContent>
       <CardFooter className="flex flex-col gap-2 ">
         <p className="text-gray-300">{footer}</p>
-        <div className="grid grid-flow-col  gap-2.5">
-          {
-            items?.map((item)=>(
-              <IconTooltip item={item} key={item.icon.name}/>
-            ))
-          }
-        </div>
+        
       </CardFooter>
     </div>
   );

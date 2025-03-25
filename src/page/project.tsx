@@ -9,8 +9,8 @@ export function Projects(){
       <div>
         <h1 className="text-4xl font-bold ">My Projects</h1>
       </div>
-      <div className="flex  w-full justify-center  px-5  gap-1" >
-        <div className="grid grid-cols-1  lg:grid-cols-2 gap-2 ">
+      <div className="flex  w-full justify-center  px-5  " >
+        <div className="grid grid-cols-1  lg:grid-cols-2 gap-6 ">
 
           {
             data.map((item)=>{

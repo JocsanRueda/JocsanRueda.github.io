@@ -31,17 +31,17 @@ export default function CardProjects({
   }
   
   return (
-    <div className={cn(`bg-black  text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-5 border rounded-md  border-gray-900`,className)} id={id} onClick={handleClick}>
+    <div className={cn(`bg-black  text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-6 border rounded-md  border-gray-900`,className)} id={id} onClick={handleClick}>
 
-      <CardContent className="-px-6 overflow-hidden rounded-t-md">
+      <CardContent className="-px-6 overflow-hidden rounded-t-md ">
         <img src={imageUrl} alt="image" className=" -rounded-t-md transition-transform duration-300 ease-in-out transform hover:scale-115 " />
       </CardContent>
-      <CardFooter className="mb-3 flex flex-col items-start">
+      <CardFooter className="mb-3 flex flex-col items-start gap-3">
         <div className="flex flex-col ">
           <CardTitle className="flex flex-col"><p className="z-10 text-2xl"  >{title} </p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0   ",
             lineColor
           )}></span></CardTitle>
-          <CardDescription>{subtitle}</CardDescription>
+          <CardDescription className="mt-2">{subtitle}</CardDescription>
         </div>
         <div className="flex flex-col gap-2 ">
 

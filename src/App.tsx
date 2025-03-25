@@ -10,7 +10,8 @@ import { ThemeProvider } from '@/components/theme-provider'
 
 import { Expertise } from '@/page/expertise'
 import { Projects } from '@/page/project'
-import { Experience } from '@/page/experience'
+import { Experience } from './page/experience'
+import ExperienceDetail from './components/experience-detail'
 
 function App() {
 
@@ -25,9 +26,10 @@ function App() {
             <Routes>
               <Route path="/" element={<HeroSection/>}/>
               <Route path="/projects" element={<Projects/>}/>
-              <Route path="/experience" element={<Experience/>}/>
-              <Route path="/expertise" element={<Expertise/>}/>
               <Route path="/projects/:id" element={<ProjectDetail/>}/>
+              <Route path="/experience" element={<Experience/>}/>
+              <Route path="/experience/:id" element={<ExperienceDetail/>}/>
+              <Route path="/expertise" element={<Expertise/>}/>
 
             </Routes>
           </Layout>
