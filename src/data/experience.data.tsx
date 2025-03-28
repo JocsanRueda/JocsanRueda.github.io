@@ -1,18 +1,41 @@
 import { 
   Layout, 
-  User, 
-  Server,
-  PenTool
+  Server
 } from "lucide-react";
-import { FaAws } from "react-icons/fa";
-import { SiNestjs, SiTypescript, SiJest, SiSwagger,SiJira, SiNodedotjs } from "react-icons/si";
+import { LucideIcon } from "lucide-react";
+import { IconType } from "react-icons/lib";
+import { FaAws, FaWindows } from "react-icons/fa";
+import { SiNestjs, SiTypescript, SiJest, SiSwagger,SiJira, SiNodedotjs, SiAnydesk } from "react-icons/si";
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { VscVscode } from "react-icons/vsc";
+export interface Stack {
+  icon: LucideIcon | IconType;
+  name: string;
+  color: string;
+}
 
-export const data = [
+export interface Experience {
+  icon?: LucideIcon | IconType;
+  lineColor: string;
+  id: string;
+  company: string;
+  position: string;
+  period: string;
+  contractType: string;
+  location: string;
+  description: string;
+  responsibilities: string[];
+  achievements: string[];
+  linkedinUrl: string;
+  companyUrl: string;
+  stack: Stack[];
+  contactCompany?:string;
+}
+
+export const data: Experience[]  = [
   {
     icon:Layout,
-    lineColor:"bg-blue-900",
+    lineColor:"bg-green-600",
     id: "guababit",
     company: "Guababit",
     position: "Desarrollador Junior Backend ",
@@ -35,17 +58,9 @@ export const data = [
       "Desarrollo e integración exitosa de ImportJobs para AWS Cognito, facilitando la importación y administración eficiente de usuarios en la plataforma",
       "Desarrollo e implementación de una solución de paginación eficiente para consultas en DynamoDB."
     ],
-    skills: [
-      { name: "Frontend", icon: Layout, color: "bg-blue-900 text-blue-100", description: "Desarrollo de interfaces de usuario modernas y responsivas" },
-      { name: "Backend", icon: Server, color: "bg-green-900 text-green-100", description: "Creación de APIs y servicios robustos" },
-      { name: "Diseño UI/UX", icon: PenTool, color: "bg-purple-900 text-purple-100", description: "Creación de experiencias de usuario intuitivas" }
-    ],
-    technologies: [
-      "React", "Node.js", "TypeScript", "MongoDB", "Express", "Redux", "Next.js", "GraphQL", "Docker", "AWS"
-    ],
     linkedinUrl: "https://www.linkedin.com/company/guababit/",
     companyUrl: "https://guababit.com/",
-    contactLinkedin: "https://linkedin.com/in/tu-perfil",
+
     stack:[
       {
         icon:SiNestjs,
@@ -92,87 +107,43 @@ export const data = [
         color:"bg-blue-600"
       }
     ]
-  },
+  } ,
   {
     icon:Server,
-    lineColor:"bg-yellow-900",
-    id: "empresa2",
-    company: "Innovación Digital",
-    position: "Desarrollador Frontend",
-    period: "Marzo 2018 - Diciembre 2020",
-    contractType: "Tiempo Completo",
-    location: "Ciudad, País",
-    image: "/images/empresa2.jpg",
-    description: "Formé parte del equipo de desarrollo frontend, enfocándome en la creación de interfaces de usuario modernas y responsivas utilizando las últimas tecnologías web.",
+    lineColor:"bg-red-800",
+    id: "infatlan",
+    company: "Infatlan, Grupo Financiero Atlantida",
+    position: "Asistente de soporte tecnico",
+    period: "Septiembre 2018 - Septiembre 2020",
+    contractType: "Contrato de practicas",
+    location: "Tegucigalpa, Francisco Morazan, Honduras",
+    description: "Formé parte del equipo de soporte técnico, realizando tareas de mantenimiento y resolución de problemas en computadoras y cajeros automáticos. Utilicé herramientas como AnyDesk y TightVNC para asistir de manera remota, y colaboré en la conexión de redes y diagnóstico de equipos.",
     responsibilities: [
-      "Desarrollar componentes frontend utilizando React y TypeScript",
-      "Implementar diseños responsivos y accesibles",
-      "Optimizar el rendimiento de aplicaciones web",
-      "Colaborar con equipos de diseño y backend",
-      "Participar en la planificación y estimación de proyectos"
+      "Uso de herramientas de soporte remoto: Utilicé AnyDesk y TightVNC para asistir en la resolución de problemas de manera remota.",
+      "Configuración de redes: Configuré redes en equipos, asegurando la conectividad y funcionamiento adecuado.",
+      "Diagnóstico y reparación de equipos: Realicé diagnósticos y reparaciones de computadoras y cajeros automáticos.",
+      "Mantenimiento preventivo: Brindé soporte y mantenimiento preventivo a equipos informáticos.",
+      "Identificación de problemas recurrentes: Detecté problemas recurrentes en equipos que requerían reparaciones"
     ],
     achievements: [
-      "Contribuí al rediseño completo de la plataforma principal de la empresa",
-      "Implementé una biblioteca de componentes reutilizables que aceleró el desarrollo en un 30%",
-      "Mentorié a tres desarrolladores junior que ahora son miembros clave del equipo"
+      "Identifiqué y solucioné problemas técnicos en computadoras y cajeros automáticos, mejorando la eficiencia del equipo de soporte.",
+      "Contribuí a la resolución de incidencias de hardware y software que aumentaron la disponibilidad de equipos clave para la empresa.",
+      "Configuré redes en equipos, asegurando su correcto funcionamiento y conectividad."
     ],
-    skills: [
-      { name: "Frontend", icon: Layout, color: "bg-blue-900 text-blue-100", description: "Desarrollo de interfaces de usuario modernas y responsivas" },
-      { name: "UX/UI", icon: User, color: "bg-yellow-900 text-yellow-100", description: "Diseño centrado en el usuario" }
-    ],
-    technologies: [
-      "React", "TypeScript", "CSS3", "SASS", "Tailwind CSS", "Redux", "Jest", "Webpack"
-    ],
-    linkedinUrl: "https://linkedin.com/company/empresa2",
-    companyUrl: "https://www.empresa2.com",
-    contactEmail: "contacto@empresa2.com",
-    contactLinkedin: "https://linkedin.com/in/tu-perfil",
+    linkedinUrl: "https://www.linkedin.com/company/infatlan/",
+    companyUrl: "https://invatlan.hn/acerca-de-invatlan/honduras/infatlan.php",
+   
     stack:[
       {
-        icon:SiNestjs,
-        name:"NestJS",
-        color:"bg-red-600"
+        icon:SiAnydesk,
+        name:"AnyDesk",
+        color:"bg-orange-900"
       },{
-        icon: SiNodedotjs,
-        name:"nodess",
-        color:"bg-green-600"
-      },
-      {
-        icon:SiTypescript,
-        name:"TypeScript",
-        color:"bg-blue-600"
-      },
-      {
-        icon:SiJest,
-        name:"Jest",
-        color:"bg-green-600"
-                   
-      },
-      {
-        icon:SiSwagger,
-        name:"Swagger",
-        color:"bg-green-600"
-                   
-      },
-      {
-        icon: FaAws,
-        name:"AWS",
-        color:"bg-yellow-600"
-                   
-      },{
-        icon: BsMicrosoftTeams,
-        name:"Teams",
-        color:"bg-purple-600"
-      },{
-        icon: SiJira,
-        name:"Jira",
-        color:"bg-blue-600"
-      },{
-        icon: VscVscode,
-        name:"vscode",
+        icon: FaWindows,
+        name:"Windows",
         color:"bg-blue-600"
       }
     ]
   }
-  // Puedes añadir más experiencias siguiendo la misma estructura
+
 ];

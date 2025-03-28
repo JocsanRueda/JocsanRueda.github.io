@@ -27,7 +27,7 @@ export function ExperienceDetail() {
 
   const { id } = useParams<{ id: string }>(); 
   
-  const experience = data.find((item) => item.id === id);
+  const experience  = data.find((item) => item.id === id);
 
   if (!experience) {
     return (
@@ -85,15 +85,6 @@ export function ExperienceDetail() {
           {/* Columna principal */}
           <div className="lg:col-span-2">
             {/* Imagen de la empresa */}
-            {experience.image && (
-              <Card className="bg-black text-white border-gray-900 mb-8 overflow-hidden shadow-lg dark:shadow-none -py-1">
-                <img 
-                  src={experience.image} 
-                  alt={experience.company} 
-                  className="w-full h-auto object-cover transition-all duration-300 transform hover:scale-105"
-                />
-              </Card>
-            )}
 
             <Card className="bg-black text-white border-gray-900 mb-8 shadow-lg dark:shadow-none">
               <CardHeader className="flex flex-row items-center">
@@ -201,43 +192,32 @@ export function ExperienceDetail() {
             </Card>
 
             {/* Contacto */}
-            <Card className="bg-black text-white border-gray-900 overflow-hidden shadow-lg dark:shadow-none">
-              <CardHeader className="flex flex-row items-center">
-                <FaEnvelope size={28} />
-                <div className="flex flex-col">
-                  <CardTitle className="flex flex-col">
-                    <p className="z-10 text-lg">Contacto</p>
-                    <span className="p-1 rounded shadow -mt-2.5 z-0 bg-purple-900"></span>
-                  </CardTitle>
-                </div>
-              </CardHeader>
+            {experience.contactCompany && (
+              <Card className="bg-black text-white border-gray-900 overflow-hidden shadow-lg dark:shadow-none">
+                <CardHeader className="flex flex-row items-center">
+                  <FaEnvelope size={28} />
+                  <div className="flex flex-col">
+                    <CardTitle className="flex flex-col">
+                      <p className="z-10 text-lg">Contacto</p>
+                      <span className="p-1 rounded shadow -mt-2.5 z-0 bg-purple-900"></span>
+                    </CardTitle>
+                  </div>
+                </CardHeader>
               
-              <CardContent>
-                <div className="space-y-4">
-                  {experience.contactEmail && (
+                <CardContent>
+                  <div className="space-y-4">
+                  
                     <a 
-                      href={`mailto:${experience.contactEmail}`}
+                      href={`mailto:${experience.contactCompany}`}
                       className="flex items-center gap-2 px-4 py-3 rounded-lg border border-gray-800 hover:border-gray-700 transition-all duration-300"
                     >
                       <FaEnvelope className="h-4 w-4" />
-                      <span>{experience.contactEmail}</span>
+                      <span>{experience.contactCompany}</span>
                     </a>
-                  )}
-                  
-                  {experience.contactLinkedin && (
-                    <a 
-                      href={experience.contactLinkedin}
-                      className="flex items-center gap-2 px-4 py-3 rounded-lg border border-gray-800 hover:border-gray-700 transition-all duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaLinkedin className="h-4 w-4" />
-                      <span>Perfil LinkedIn</span>
-                    </a>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
+                
+                  </div>
+                </CardContent>
+              </Card>)}
           </div>
         </div>
       </div>
