@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 
 export default function BlurBackground() {
   const {activeSection}=useActiveSection()
-
-  console.log('activeSection : ',activeSection)
   
   const [blur, setBlur] = useState(0);
   
