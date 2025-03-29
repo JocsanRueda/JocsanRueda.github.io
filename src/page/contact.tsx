@@ -45,7 +45,7 @@ export function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen  flex items-center justify-center px-15 sm:px-4 py-16">
+    <div className="min-h-screen  flex items-center justify-center px-5 p sm:px-4 py-16">
       <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 sm:gap-6 lg:gap-12">
         {/* Columna de Información Personal */}
         <div className="space-y-8">

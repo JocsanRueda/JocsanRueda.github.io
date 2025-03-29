@@ -1,36 +1,34 @@
+import { useActiveSection } from "@/context/active-section.context";
 import { cn } from "@/lib/utils";
 import { routeEnum } from "@/shared/route.enum";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 export default function BlurBackground() {
-  const location=useLocation()
+  const {activeSection}=useActiveSection()
+
+  console.log('activeSection : ',activeSection)
   
   const [blur, setBlur] = useState(0);
-  const routerBlurSm=[routeEnum.EXPERTISE,routeEnum.PROJECTS ]
   
   useEffect(()=>{
     
-    if(location.pathname===routeEnum.HOME)
+    if(activeSection===routeEnum.HOME)
       setBlur(0)
-    else if( routerBlurSm.includes(location.pathname as routeEnum))
+    else 
       setBlur(2)
-    else{
-      setBlur(4)
-    }
         
-  }, [location.pathname])
+  }, [activeSection])
 
   const blurClass = clsx({
     "backdrop-blur-0": blur === 0,
-    "backdrop-blur-[2px]": blur === 2,
-    "backdrop-blur-[6px]": blur === 4,
+    "backdrop-blur-[2px]": blur === 1,
+    "backdrop-blur-[6px]": blur === 2,
   });
   
   return (
     <div
-      className={cn("fixed inset-0 w-full h-full pointer-events-none transition-all duration-300 ease-in-out ",blurClass)}
+      className={cn("fixed inset-0 w-full h-full pointer-events-none transition-all duration-700 ease-in-out ",blurClass)}
   
       style={{
         zIndex:-2,  
