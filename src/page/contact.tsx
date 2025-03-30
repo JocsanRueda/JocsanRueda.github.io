@@ -1,4 +1,3 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
 import { 
   Card, 
   CardContent, 
@@ -11,43 +10,72 @@ import { Textarea } from "@/components/ui/textarea";
 import { 
   Send,
   AtSign,
-  Earth
+  Earth,
+  CheckCheck,
+  X
 } from "lucide-react";
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-
-// Interfaz para los datos del formulario
-interface ContactFormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FormProvider, useForm } from "react-hook-form";
+import { contactSchema } from "@/schemas/contact.schema";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import emailjs from "@emailjs/browser";
+import { Toaster } from "sonner";
+import { toast } from "sonner"
+import { useTheme } from "@/components/theme-provider";
 
 export function ContactPage() {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+ 
+  const form = useForm<z.infer<typeof contactSchema>>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "", 
+      email: "", 
+      subject: "",
+      message: "", 
+    },
+  
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+  const {theme}= useTheme()
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('Formulario enviado:', formData);
-  };
+  function onSubmit(values: z.infer<typeof contactSchema>) {
+
+    console.log("Formulario enviado:", values);
+   
+    const templateParams = {
+      name: values.name,
+      email: values.email,
+      subject: values.subject,
+      message: values.message,
+    };
+  
+    emailjs.send(
+      "service_h6uggvv", 
+      "template_ugtq53f", 
+      templateParams,
+      "nCjT5uK6iCjFxDory"
+    )
+      .then(() => {
+        console.log("Mensaje enviado con éxito");
+        toast("Mensaje enviado con éxito",{
+          icon: <CheckCheck/>,
+        })
+      })
+      .catch((error) => {
+        console.error("Error al enviar el mensaje:", error);
+        toast("Error al enviar el mensaje: " + error.message,{
+          icon: <X/>,
+        })
+        
+      });
+  }
 
   return (
     <div className="min-h-screen  flex items-center justify-center px-5 p sm:px-4 py-16">
       <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 sm:gap-6 lg:gap-12">
-        {/* Columna de Información Personal */}
+
         <div className="space-y-8">
           <div className="space-y-4">
             <h2 className=" text-2xl md:*:text-4xl font-bold">Contactate</h2>
@@ -71,8 +99,7 @@ export function ContactPage() {
               </div>
             </div>
           </div>
-
-          {/* Redes Sociales */}
+    
           <div className="flex space-x-6 my-5">
             <a 
               href="https://linkedin.com/in/tuusuario" 
@@ -96,75 +123,69 @@ export function ContactPage() {
 
         {/* Columna de Formulario */}
         <div>
-          <Card className="bg-sidebar dark:bg-black opacity-85 border dark:border-gray-900 ">
-            <CardHeader>
-              <CardTitle className="text-2xl dark:text-white">Envía un Mensaje</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">Nombre</label>
-                  <Input 
-                    type="text" 
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Tu nombre" 
-                
-                    required
-                  />
-                </div>
+          <FormProvider {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+              <Card className="bg-sidebar dark:bg-black opacity-85 border dark:border-gray-900 ">
+                <CardHeader>
+                  <CardTitle className="text-2xl dark:text-white">Envía un Mensaje</CardTitle>
+                </CardHeader>
+                <CardContent>
 
-                <div>
-                  <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">Correo Electrónico</label>
-                  <Input 
-                    type="email" 
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="tu@email.com" 
-                   
-                    required
-                  />
-                </div>
+                  <FormField control={form.control} name="name" render={({ field }) => (
+                    <FormItem className="my-3">
+                      <FormLabel className='block text-sm text-gray-600 dark:text-gray-400 '>Nombre</FormLabel>
+                      <FormControl>
+                        <Input placeholder="tu nombre" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
 
-                <div>
-                  <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">Asunto</label>
-                  <Input 
-                    type="text" 
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="Motivo de contacto" 
-              
-                    required
-                  />
-                </div>
+                  <FormField control={form.control} name="email" render={({ field }) => (
+                    <FormItem className="my-3">
+                      <FormLabel className='block text-sm text-gray-600 dark:text-gray-400 '>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="@email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
 
-                <div>
-                  <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">Mensaje</label>
-                  <Textarea 
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Escribe tu mensaje aquí" 
-                    className=" min-h-[150px]"
-                    required
-                  />
-                </div>
+                  <FormField control={form.control} name="subject" render={({ field }) => (
+                    <FormItem className="my-3">
+                      <FormLabel className='block text-sm text-gray-600 dark:text-gray-400 '>Asunto</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Motivo de contacto" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
 
-                <Button 
-                  variant="outline"
-                  type="submit" 
-                  className="w-full  hover:bg-blue-800 transition-colors text-gray-600 hover:text-white dark:text-white "
-                >
-                  <Send className="mr-2 w-4 h-4" /> Enviar Mensaje
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+                  <FormField control={form.control} name="message" render={({ field }) => (
+                    <FormItem className="my-3 ">
+                      <FormLabel className='block text-sm text-gray-600 dark:text-gray-400 '>Mensaje</FormLabel>
+                      <FormControl>
+                        <Textarea placeholder="Escribe tu mensaje aquí" {...field} className="min-h-[150px]" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+
+                  <Button 
+                    variant="outline"
+                    type="submit" 
+                    className="w-full  hover:bg-blue-800 transition-colors text-gray-600 hover:text-white dark:text-white "
+                  >
+                    <Send className="mr-2 w-4 h-4" /> Enviar Mensaje
+                  </Button>
+                  <Toaster theme={theme}/>
+                </CardContent>
+              </Card>
+            </form>
+          </FormProvider>
         </div>
       </div>
+     
     </div>
   );
 }

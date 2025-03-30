@@ -16,7 +16,7 @@ export function AnimationSection({ sections }: AnimationSectionProps) {
     setActiveSection(sectionUrl); // Sincroniza la sección activa
   };
   return (
-    <div> {/* Se eliminó overflow-y-auto */}
+    <div> 
       {sections.map((section) => (
         <Element name={section.url} key={section.url} 
           onTouchStart={() => handleTouchMove(section.url)}

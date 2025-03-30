@@ -38,7 +38,10 @@ export default [
           argsIgnorePattern: "^_"
         }
       ],
-      "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 0, maxBOF: 0 }]
+      "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 0, maxBOF: 0 }],
+      "quotes": [
+        "error",
+        "double"]
    
     },
   },

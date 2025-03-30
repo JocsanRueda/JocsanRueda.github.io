@@ -44,7 +44,7 @@ export default function CardExperience({
   }
   
   return (
-    <div className={cn(`bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-6 justify-between border rounded-md  dark:border-gray-900 max-w-5xl  cursor-pointer hover:border-gray-700 transition-all`,className)} id={id} onClick={handleClick}>
+    <div className={cn(`bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-6 justify-between border rounded-md  dark:border-gray-900 max-w-5xl  cursor-pointer transition-all`,className)} id={id} onClick={handleClick}>
       <CardHeader className="flex flex-row items-center gap-3">
         
         {Icon && <Icon size={36} />}

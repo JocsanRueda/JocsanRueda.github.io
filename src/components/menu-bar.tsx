@@ -23,10 +23,10 @@ export function MenuBar() {
   const {activeSection, setActiveSection} = useActiveSection()
 
   const handleClick = () => {
-    if(theme==='dark'){
-      setTheme('light')
+    if(theme==="dark"){
+      setTheme("light")
     }else{
-      setTheme('dark')
+      setTheme("dark")
     }
   }
 
@@ -71,7 +71,7 @@ export function MenuBar() {
       <NavigationMenuList className="text-sm gap-1 md:gap-2">
         <NavigationMenuItem>
           <Link className="font-light data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ring-ring/10 dark:ring-ring/20 dark:outline-ring/40 outline-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-[color,box-shadow] focus-visible:ring-4 focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 cursor-pointer" to="#  " onClick={handleClick} 
-            isDynamic={true}><Switch checked={theme==='dark'}/></Link>
+            isDynamic={true}><Switch checked={theme==="dark"}/></Link>
         </NavigationMenuItem>
         
         <NavigationMenuItem>
