@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { IconTooltip } from "./icon-tooltip";
 import { iconItem } from "@/common/types/cards";
 import { useNavigate } from "react-router-dom";
+import { getDynamicColor } from "@/utils/styles.utils";
+import { useTheme } from "./theme-provider";
 
 type CardProps = {
   id:string,
@@ -24,6 +26,8 @@ export default function CardProjects({
   icons,
 }: CardProps) {
 
+  const {theme}=useTheme();
+
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -31,7 +35,7 @@ export default function CardProjects({
   }
   
   return (
-    <div className={cn(`bg-black  text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-6 border rounded-md  border-gray-900`,className)} id={id} onClick={handleClick}>
+    <div className={cn(`bg-sidebar dark:bg-black  dark:text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-6 border rounded-md  dark:border-gray-900`,className)} id={id} onClick={handleClick}>
 
       <CardContent className="-px-6 overflow-hidden rounded-t-md ">
         <img src={imageUrl} alt="image" className=" -rounded-t-md transition-transform duration-300 ease-in-out transform hover:scale-115 " />
@@ -39,7 +43,7 @@ export default function CardProjects({
       <CardFooter className="mb-3 flex flex-col items-start gap-3">
         <div className="flex flex-col ">
           <CardTitle className="flex flex-col"><p className="z-10 text-2xl"  >{title} </p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0   ",
-            lineColor
+            getDynamicColor(lineColor,theme)
           )}></span></CardTitle>
           <CardDescription className="mt-2">{subtitle}</CardDescription>
         </div>

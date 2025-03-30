@@ -18,11 +18,11 @@ export function IconTooltip({item}: {item:iconItem}){
         <TooltipTrigger onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd} ><IconComponent className={cn("p-1 rounded transition-all",
+          onTouchEnd={handleTouchEnd} ><IconComponent className={cn("p-1 rounded transition-all  hover:text-white dartk:hover:text-white",
             hobered && item.color
           )} size={28} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false) } /></TooltipTrigger>
         <TooltipContent>
-          <p className="bg-sidebar border rounded px-1 font-light text-black dark:text-white">{item.name}</p>
+          <p className="bg-sidebar border rounded px-1 font-light text-black dark:text-white ">{item.name}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

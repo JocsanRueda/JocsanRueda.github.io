@@ -96,66 +96,67 @@ export function ContactPage() {
 
         {/* Columna de Formulario */}
         <div>
-          <Card className="bg-black opacity-85  border-gray-900 shadow-2xl">
+          <Card className="bg-sidebar dark:bg-black opacity-85 border dark:border-gray-900 ">
             <CardHeader>
-              <CardTitle className="text-2xl text-white">Envía un Mensaje</CardTitle>
+              <CardTitle className="text-2xl dark:text-white">Envía un Mensaje</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2">Nombre</label>
+                  <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">Nombre</label>
                   <Input 
                     type="text" 
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Tu nombre" 
-                    className="bg-black border-gray-800 focus:border-blue-600"
+                
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2">Correo Electrónico</label>
+                  <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">Correo Electrónico</label>
                   <Input 
                     type="email" 
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="tu@email.com" 
-                    className="bg-black border-gray-800 focus:border-blue-600"
+                   
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2">Asunto</label>
+                  <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">Asunto</label>
                   <Input 
                     type="text" 
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Motivo de contacto" 
-                    className="bg-black border-gray-800 focus:border-blue-600"
+              
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-gray-400 mb-2">Mensaje</label>
+                  <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">Mensaje</label>
                   <Textarea 
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Escribe tu mensaje aquí" 
-                    className="bg-black border-gray-800 focus:border-blue-600 min-h-[150px]"
+                    className=" min-h-[150px]"
                     required
                   />
                 </div>
 
                 <Button 
+                  variant="outline"
                   type="submit" 
-                  className="w-full bg-blue-600 hover:bg-blue-700 transition-colors dark:text-white "
+                  className="w-full  hover:bg-blue-800 transition-colors text-gray-600 hover:text-white dark:text-white "
                 >
                   <Send className="mr-2 w-4 h-4" /> Enviar Mensaje
                 </Button>

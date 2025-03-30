@@ -4,6 +4,8 @@ import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons/lib";
 import { IconTooltip } from "./icon-tooltip";
 import { iconItem } from "@/common/types/cards";
+import { useTheme } from "./theme-provider";
+import { getDynamicColor } from "@/utils/styles.utils";
 
 type CardProps = {
   icon?: LucideIcon | IconType;
@@ -28,16 +30,18 @@ export default function CardSkill({
   items
 }: CardProps) {
 
+  const {theme}= useTheme();
+
   const Icon=(icon as LucideIcon | IconType) || null  ;
-  
+
   return (
-    <div className={cn(`bg-black  text-white  p-6  max-w-sm flex flex-col gap-5 justify-between border rounded-md  border-gray-900`,className)}>
+    <div className={cn(`bg-sidebar dark:bg-black  dark:text-white  p-6  max-w-sm flex flex-col gap-5 justify-between border rounded-md  dark:border-gray-900`,className)}>
       <CardHeader className="flex flex-row items-center gap-3">
         
         {Icon && <Icon size={36} />}
         <div className="flex flex-col">
           <CardTitle className="flex flex-col"><p className="z-10 text-2xl">{title}</p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0  ",
-            lineColor
+            getDynamicColor(lineColor,theme)
           )}></span></CardTitle>
           <CardDescription>{subtitle}</CardDescription>
         </div>

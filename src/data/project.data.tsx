@@ -11,6 +11,7 @@ export const data=[
     subtitle:"Private Project (Guababit 2025)",
     description:"This is a description",
     imageUrl:luqaImage,
+    lineColor:"blue",
     icons:[
       {
         icon:SiNestjs,
@@ -48,6 +49,7 @@ export const data=[
     subtitle:"University Project",
     description:"This is a description",
     imageUrl:networkCalculatorImagen,
+    lineColor:"orange",
     icons:[
       {
         icon:FaReact,
@@ -78,6 +80,7 @@ export const data=[
     subtitle:"University Project",
     description:"This is a description",
     imageUrl:unahWebImage,
+    LineColor:"blue",
     icons:[
       {
         icon:FaReact,

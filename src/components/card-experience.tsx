@@ -6,6 +6,8 @@ import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons/lib";
 import { useNavigate } from "react-router-dom";
 import { IconTooltip } from "./icon-tooltip";
+import { getDynamicColor } from "@/utils/styles.utils";
+import { useTheme } from "./theme-provider";
 
 type CardProps = {
   id: string;
@@ -33,6 +35,7 @@ export default function CardExperience({
 }: CardProps) {
 
   const Icon=(icon as LucideIcon | IconType) || null  ;
+  const {theme}= useTheme();
 
   const navigate = useNavigate();
 
@@ -41,22 +44,22 @@ export default function CardExperience({
   }
   
   return (
-    <div className={cn(`bg-black  text-white  p-6   flex flex-col gap-6 justify-between border rounded-md  border-gray-900 max-w-5xl  cursor-pointer hover:border-gray-700 transition-all`,className)} id={id} onClick={handleClick}>
+    <div className={cn(`bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-6 justify-between border rounded-md  dark:border-gray-900 max-w-5xl  cursor-pointer hover:border-gray-700 transition-all`,className)} id={id} onClick={handleClick}>
       <CardHeader className="flex flex-row items-center gap-3">
         
         {Icon && <Icon size={36} />}
         <div className="flex flex-col">
           <CardTitle className="flex flex-col"><p className="z-10 text-2xl">{title}</p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0  ",
-            lineColor
+            getDynamicColor(lineColor,theme)
           )}></span></CardTitle>
           <CardDescription className="mt-2">{subtitle}</CardDescription>
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-gray-400 border-l-2 border-gray-500 pl-3">{description}</p>
+        <p className="text-gray-600 border-l-2 border-gray-500 pl-3">{description}</p>
       </CardContent>
       <CardFooter className="flex flex-col gap-2 ">
-        <p className="text-gray-300">{footer}</p>
+        <p className="text-gray-600 dark:text-gray-300">{footer}</p>
 
         <div className="flex flex-col gap-2 ">
         

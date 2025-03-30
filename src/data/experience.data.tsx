@@ -35,7 +35,7 @@ export interface Experience {
 export const data: Experience[]  = [
   {
     icon:Layout,
-    lineColor:"bg-green-600",
+    lineColor:"green",
     id: "guababit",
     company: "Guababit",
     position: "Desarrollador Junior Backend ",
@@ -110,7 +110,7 @@ export const data: Experience[]  = [
   } ,
   {
     icon:Server,
-    lineColor:"bg-red-800",
+    lineColor:"red",
     id: "infatlan",
     company: "Infatlan, Grupo Financiero Atlantida",
     position: "Asistente de soporte tecnico",

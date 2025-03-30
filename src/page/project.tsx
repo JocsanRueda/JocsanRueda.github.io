@@ -20,7 +20,7 @@ export function Projects(){
                 title={item.title}
                 subtitle={item.subtitle} 
                 className="border rounded-md opacity-85 grow-1" 
-                lineColor="bg-blue-900"
+                lineColor={item.lineColor}
                 imageUrl={item.imageUrl}
                 icons={item.icons}
   

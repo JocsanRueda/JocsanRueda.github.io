@@ -11,7 +11,7 @@ export const data=[
     subtitle: "Development",
     Description:"VsCode, Git, GitHub, linux and more",
 
-    lineColor:"bg-orange-900",
+    lineColor:"orange",
     stacks : [
       {
         icon:FaWindows,
@@ -48,7 +48,7 @@ export const data=[
     subtitle: "Development",
     Description:"Proficient in C++, Python, Java, and Octave",
 
-    lineColor:"bg-green-900",
+    lineColor:"green",
     stacks : [
       {
         icon:SiCplusplus,
@@ -83,7 +83,7 @@ export const data=[
     subtitle: "Development",
     Description:"Proficient in building and optimizing backend services using NestJS, TypeScript, and AWS. Experience with authentication, API Gateway, and database management.",
 
-    lineColor:"bg-blue-900",
+    lineColor:"blue",
     stacks : [
       {
         icon:SiNestjs,
@@ -121,7 +121,7 @@ export const data=[
     Description:"Passionate about UI/UX. Experienced in developing modern, responsive interfaces using React, NextJS, TailwindCSS, and Radix UI.",
     footer:"Focused on creating intuitive and accessible designs.",
 
-    lineColor:"bg-red-900",
+    lineColor:"red",
     stacks : [
       {
         icon:FaReact,
