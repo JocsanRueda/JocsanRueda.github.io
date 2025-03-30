@@ -47,15 +47,14 @@ export default function CardProjects({
           )}></span></CardTitle>
           <CardDescription className="mt-2">{subtitle}</CardDescription>
         </div>
-        <div className="flex flex-col gap-2 ">
 
-          <div className="grid grid-flow-col  gap-2.5">
-            {
-              icons?.map((item)=>(
-                <IconTooltip item={item} key={item.icon.name}/>
-              ))
-            }
-          </div>
+        <div className="flex flex-wrap  gap-2.5">
+          {
+            icons?.map((item)=>(
+              <IconTooltip item={item} key={item.icon.name}/>
+            ))
+          }
+        
         </div>
       </CardFooter>
     </div>

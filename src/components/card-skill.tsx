@@ -51,7 +51,7 @@ export default function CardSkill({
       </CardContent>
       <CardFooter className="flex flex-col gap-2 ">
         <p className="text-gray-300">{footer}</p>
-        <div className="grid grid-flow-col  gap-2.5">
+        <div className="flex flex-wrap  gap-2.5">
           {
             items?.map((item)=>(
               <IconTooltip item={item} key={item.icon.name}/>

@@ -60,17 +60,15 @@ export default function CardExperience({
       </CardContent>
       <CardFooter className="flex flex-col gap-2 ">
         <p className="text-gray-600 dark:text-gray-300">{footer}</p>
-
-        <div className="flex flex-col gap-2 ">
         
-          <div className="grid grid-flow-col  gap-2.5 ">
-            {
-              stack?.map((item)=>(
-                <IconTooltip item={item} key={item.icon.name}/>
-              ))
-            }
-          </div>
+        <div className="flex flex-wrap  gap-2.5 ">
+          {
+            stack?.map((item)=>(
+              <IconTooltip item={item} key={item.icon.name}/>
+            ))
+          }
         </div>
+       
       </CardFooter>
     </div>
   );
