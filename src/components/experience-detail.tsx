@@ -22,16 +22,21 @@ import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { data } from "@/data/experience.data";
 import { IconTooltip } from "@/components/icon-tooltip";
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export function ExperienceDetail() {
 
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
+    
   const { id } = useParams<{ id: string }>(); 
   
   const experience  = data.find((item) => item.id === id);
 
   if (!experience) {
     return (
-      <div className="flex flex-col items-center justify-center h-screen bg-black text-white">
+      <div className="flex flex-col items-center justify-center h-screen dark:bg-black dark:*:text-white">
         <h1 className="text-2xl mb-4">Experiencia no encontrada</h1>
         <Button variant="outline" onClick={() => window.history.back()}>
           <ArrowLeft className="mr-2 h-4 w-4" />

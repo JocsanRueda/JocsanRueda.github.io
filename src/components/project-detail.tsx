@@ -22,7 +22,12 @@ import { FaGithub } from "react-icons/fa";
 import { IconTooltip } from "./icon-tooltip";
 import { data } from "@/data/detail-project.data";
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 export function ProjectDetail() {
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
 
   const { id } = useParams<{ id: string }>(); 
   
@@ -30,7 +35,7 @@ export function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="flex flex-col items-center justify-center h-screen bg-black text-white">
+      <div className="flex flex-col items-center justify-center h-screen dark:bg-black dark:*:text-white">
         <h1 className="text-2xl mb-4">Proyecto no encontrado</h1>
         <Button variant="outline" onClick={() => window.history.back()}>
           <ArrowLeft className="mr-2 h-4 w-4" />
@@ -108,7 +113,7 @@ export function ProjectDetail() {
             </Card>
             
             {/* Características */}
-            <Card className="bg-sidebar darK:bg-black dark:text-white dark:border-gray-900 ">
+            <Card className="bg-sidebar dark:bg-black dark:text-white dark:border-gray-900 ">
               <CardHeader className="flex flex-row items-center">
                 <CheckCheck size={28} />
                 <div className="flex flex-col">

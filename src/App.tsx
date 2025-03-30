@@ -24,7 +24,6 @@ function App() {
     { url: routeEnum.EXPERTISE, component: <Expertise /> },
     { url: routeEnum.EXPERIENCE, component: <Experience /> },
     { url: routeEnum.PROJECTS, component: <Projects /> },
-   
     { url: routeEnum.CONTACT, component: <ContactPage /> },
   ]
 
