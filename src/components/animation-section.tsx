@@ -22,6 +22,9 @@ export function AnimationSection({ sections }: AnimationSectionProps) {
           onTouchStart={() => handleTouchMove(section.url)}
           onTouchMove={() => handleTouchMove(section.url)}
           onTouchEnd={() => handleTouchMove(section.url)}
+          style={{
+            contentVisibility:"auto",
+          }}
         >
           <motion.div
             initial={{ opacity: 0, y: 50 }}
