@@ -4,12 +4,12 @@ export function Projects(){
 
   return (
 
-    <div className="min-h-screen flex flex-col justify-center items-center gap-7 my-2 mx-5">
+    <div className="min-h-screen flex flex-col justify-center items-center gap-5 my-2 mx-1">
       
       <div>
-        <h1 className="text-4xl font-bold ">Proyectos</h1>
+        <h1 className="text-4xl font-bold mb-6">Proyectos</h1>
       </div>
-      <div className="flex  w-full justify-center  px-5  " >
+      <div className="flex  w-full justify-center  px-4  " >
         <div className="grid grid-cols-1  lg:grid-cols-2 gap-6 ">
 
           {
