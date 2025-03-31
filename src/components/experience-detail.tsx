@@ -124,7 +124,7 @@ export function ExperienceDetail() {
                   {experience.responsibilities.map((responsibility, index) => (
                     <li key={index} className="flex items-start">
                       <Dot />
-                      <span className="text-gray-700 dark:text-gray-300"><strong>{responsibility.split(':')[0]}</strong>: {responsibility.split(':')[1]}</span>
+                      <span className="text-gray-700 dark:text-gray-300"><strong>{responsibility.split(":")[0]}</strong>: {responsibility.split(":")[1]}</span>
                     </li>
                   ))}
                 </ul>

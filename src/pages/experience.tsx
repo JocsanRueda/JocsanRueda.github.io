@@ -32,3 +32,5 @@ export function Experience(){
 
   </div>
 }
+
+export default Experience

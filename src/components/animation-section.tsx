@@ -40,3 +40,5 @@ export function AnimationSection({ sections }: AnimationSectionProps) {
     </div>
   );
 }
+
+export default AnimationSection;

@@ -10,10 +10,10 @@ export function ParticlesBackGround(){
 
   const {theme}=useTheme()
 
-  const [currentConfig, setCurrentConfig] = useState(theme === 'dark' ? darkParticlesConfig : lightParticlesConfig);
+  const [currentConfig, setCurrentConfig] = useState(theme === "dark" ? darkParticlesConfig : lightParticlesConfig);
 
   useEffect(() => {
-    setCurrentConfig(theme === 'dark' ? darkParticlesConfig : lightParticlesConfig);
+    setCurrentConfig(theme === "dark" ? darkParticlesConfig : lightParticlesConfig);
   }, [theme]);
   
   const particlesInit = useCallback(async (engine: Engine) => {

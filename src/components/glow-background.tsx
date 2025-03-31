@@ -4,7 +4,7 @@ import { useTheme } from "./theme-provider";
 export default function GlowBackground() {
   const [position, setPosition] = useState({ x: "50%", y: "50%" });
   const {theme}=useTheme()
-  const gradient= theme==='dark' ? 'rgba(0, 128, 255, 0.08)' : 'rgba(0, 0, 0, 0.1)'
+  const gradient= theme==="dark" ? "rgba(0, 128, 255, 0.08)" : "rgba(0, 0, 0, 0.1)"
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

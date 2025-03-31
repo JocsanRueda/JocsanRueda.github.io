@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface Skill {
@@ -19,7 +19,7 @@ export function SkillBadge({ skill }: SkillBadgeProps) {
         <TooltipTrigger asChild>
           <div 
             className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm
-                      ${skill.color || 'bg-gray-800 text-gray-300'} 
+                      ${skill.color || "bg-gray-800 text-gray-300"} 
                       hover:opacity-90 transition-opacity cursor-default`}>
             {skill.icon && <skill.icon className="h-3.5 w-3.5 mr-1" />}
             {skill.name}
