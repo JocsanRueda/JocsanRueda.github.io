@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { useState } from "react";
 import { iconItem } from "@/common/types/cards";
+import { createPortal } from "react-dom";
 
 export function IconTooltip({item}: {item:iconItem}){
   const IconComponent = item.icon;
@@ -13,6 +14,7 @@ export function IconTooltip({item}: {item:iconItem}){
   const handleTouchEnd = () => setHovered(false);
 
   return<>
+ 
     <TooltipProvider >
       <Tooltip delayDuration={1} open={hobered} >
         <TooltipTrigger onMouseEnter={handleMouseEnter}
@@ -21,9 +23,15 @@ export function IconTooltip({item}: {item:iconItem}){
           onTouchEnd={handleTouchEnd} ><IconComponent className={cn("p-1 rounded transition-all  hover:text-white dartk:hover:text-white",
             hobered && item.color
           )} size={28} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false) } /></TooltipTrigger>
-        <TooltipContent>
-          <p className="bg-sidebar border rounded px-1 font-light text-black dark:text-white ">{item.name}</p>
-        </TooltipContent>
+        {
+          hobered && createPortal(
+            <TooltipContent  side="top"
+              sideOffset={6} >
+              <p className="bg-sidebar border rounded px-1 font-light text-black dark:text-white ">{item.name}</p>
+            </TooltipContent>,
+            document.body
+          )
+        }
       </Tooltip>
     </TooltipProvider>
 
