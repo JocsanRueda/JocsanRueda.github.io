@@ -23,6 +23,8 @@ import { IconTooltip } from "./icon-tooltip";
 import { data } from "@/data/project/detail-project.data";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import {scroller } from "react-scroll"
+import { routeEnum } from "@/shared/enum/route.enum";
 export function ProjectDetail() {
 
   useEffect(()=>{
@@ -33,11 +35,26 @@ export function ProjectDetail() {
   
   const project = data.find((item) => item.id === id);
 
+  const handleBack= async ()=>{
+
+    await new Promise((resolve)=>{
+      window.history.back()
+      setTimeout(resolve, 50);
+    });
+   
+    scroller.scrollTo(routeEnum.PROJECTS, {
+      
+      smooth: false,
+      offset: -41, 
+    });
+    
+  }
+
   if (!project) {
     return (
       <div className="flex flex-col items-center justify-center h-screen dark:bg-black dark:*:text-white">
         <h1 className="text-2xl mb-4">Proyecto no encontrado</h1>
-        <Button variant="outline" onClick={() => window.history.back()}>
+        <Button variant="outline" onClick={handleBack}>
           <ArrowLeft className="mr-2 h-4 w-4" />
           Volver
         </Button>
@@ -52,7 +69,7 @@ export function ProjectDetail() {
         <Button 
           variant="ghost" 
           className="mb-8 dark:text-gray-400 hover:text-white hover:bg-gray-800 border dark:border-none"
-          onClick={() => window.history.back()}
+          onClick={handleBack}
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Volver 

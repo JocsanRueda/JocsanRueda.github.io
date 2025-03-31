@@ -12,9 +12,11 @@ import {
   AtSign,
   Earth,
   CheckCheck,
-  X
+  X,
+  Clipboard,
+  FileText
 } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { FormProvider, useForm } from "react-hook-form";
 import { contactSchema } from "@/schemas/contact.schema";
 import { z } from "zod";
@@ -24,7 +26,7 @@ import emailjs from "@emailjs/browser";
 import { Toaster } from "sonner";
 import { toast } from "sonner"
 import { useTheme } from "@/components/theme-provider";
-
+import { IconTooltip } from "@/components/icon-tooltip";
 export function ContactPage() {
  
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -41,8 +43,6 @@ export function ContactPage() {
   const {theme}= useTheme()
 
   function onSubmit(values: z.infer<typeof contactSchema>) {
-
-    console.log("Formulario enviado:", values);
    
     const templateParams = {
       name: values.name,
@@ -58,10 +58,12 @@ export function ContactPage() {
       "nCjT5uK6iCjFxDory"
     )
       .then(() => {
-        console.log("Mensaje enviado con éxito");
+
         toast("Mensaje enviado con éxito",{
           icon: <CheckCheck/>,
         })
+
+        form.reset();
       })
       .catch((error) => {
         console.error("Error al enviar el mensaje:", error);
@@ -70,6 +72,19 @@ export function ContactPage() {
         })
         
       });
+  }
+
+  const icons={
+    linkedin: {
+      name: "LinkedIn",
+      icon: FaLinkedin,
+      color: "bg-blue-800",
+    },
+    github: {
+      name: "Curriculum",
+      icon: FileText,
+      color: "bg-green-800",
+    },
   }
 
   return (
@@ -87,7 +102,18 @@ export function ContactPage() {
               <AtSign className="text-blue-500 w-6 h-6" />
               <div>
                 <p className="text-sm text-gray-400">Email</p>
-                <p>jocsanelyrueda@gmail.com</p>
+                <div className="flex items-center space-x-2">
+                  <p>jocsanelyrueda@gmail.com</p>
+                  <Clipboard 
+                    className="w-5 h-5 cursor-pointer dark:text-gray-200 hover:bg-blue-500 p-0.5 hover:text-white dark:hover:text-black rounded transition-colors" 
+                    onClick={() => {
+                      navigator.clipboard.writeText("jocsanelyrueda@gmail.com");
+                      toast("Correo copiado al portapapeles", {
+                        icon: <CheckCheck />,
+                      });
+                    }} 
+                  />
+                </div>
               </div>
             </div>
 
@@ -105,17 +131,17 @@ export function ContactPage() {
               href="https://linkedin.com/in/tuusuario" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-blue-500 transition-colors"
+            
             >
-              <FaLinkedin className="w-6 h-6" />
+              <IconTooltip className="w-6 h-6-1" item={icons.linkedin} />
             </a>
             <a 
-              href="https://github.com/tuusuario" 
+              href="https://drive.google.com/file/d/1BakgeZIuuClSYuifRQ9iqmrwM6WWz5Pw/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-gray-400 transition-colors"
             >
-              <FaGithub className="w-6 h-6" />
+              <IconTooltip className="w-6 h-6" item={icons.github} />
             </a>
             
           </div>

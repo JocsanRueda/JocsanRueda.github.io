@@ -3,25 +3,26 @@ import { cn } from "@/lib/utils";
 import { routeEnum } from "@/shared/enum/route.enum";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function BlurBackground() {
   const {activeSection}=useActiveSection()
-  
+  const location= useLocation()
   const [blur, setBlur] = useState(0);
   
   useEffect(()=>{
     
-    if(activeSection===routeEnum.HOME)
+    if(activeSection===routeEnum.HOME &&  location.pathname===routeEnum.HOME)
       setBlur(0)
     else 
       setBlur(2)
         
-  }, [activeSection])
+  }, [activeSection,location.pathname])
 
   const blurClass = clsx({
     "backdrop-blur-0": blur === 0,
     "backdrop-blur-[2px]": blur === 1,
-    "backdrop-blur-[4px]": blur === 2,
+    "backdrop-blur-[5px]": blur === 2,
   });
   
   return (

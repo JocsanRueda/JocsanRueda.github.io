@@ -12,13 +12,10 @@ import { FaGithub } from "react-icons/fa"
 import { SidebarTrigger } from "./ui/sidebar"
 import { useActiveSection } from "@/context/active-section.context"
 import { cn } from "@/lib/utils"
-import { useLocation, useNavigate } from "react-router-dom"
 import { routeEnum } from "@/shared/enum/route.enum"
 export function MenuBar() {
 
   const { setTheme,theme } = useTheme()
-  const {pathname} = useLocation()
-  const navigate= useNavigate()
 
   const {activeSection, setActiveSection} = useActiveSection()
 
@@ -30,19 +27,23 @@ export function MenuBar() {
     }
   }
 
-  const handleScrollToSection = (sectionName: string) => {
-  
-    if(pathname!==routeEnum.HOME){
-      navigate(routeEnum.HOME)
+  const handleScrollToSection =async (sectionName: string) => {
 
-      setTimeout(() => {
-        scroller.scrollTo(sectionName, {
-          duration: 500,
-          smooth: true,
-          offset: -41, 
-        });
-        setActiveSection(sectionName); 
-      }, 100);
+    if(window.location.pathname!==routeEnum.HOME){
+
+      await new Promise((resolve)=>{
+        window.history.back()
+        setTimeout(resolve, 50);
+      });
+   
+      scroller.scrollTo(sectionName, {
+        duration: 500,
+        smooth: true,
+        offset: -41, 
+      });
+
+      setActiveSection(sectionName); 
+   
     }
   };
  

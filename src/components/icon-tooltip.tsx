@@ -4,7 +4,12 @@ import { useState } from "react";
 import { iconItem } from "@/common/types/cards";
 import { createPortal } from "react-dom";
 
-export function IconTooltip({item}: {item:iconItem}){
+export type IconTooltipProps = {
+  item: iconItem;
+  className?: string;
+}
+
+export function IconTooltip({item,className}:IconTooltipProps) {
   const IconComponent = item.icon;
   const [hobered, setHovered] = useState(false)
 
@@ -16,11 +21,11 @@ export function IconTooltip({item}: {item:iconItem}){
   return<>
  
     <TooltipProvider >
-      <Tooltip delayDuration={1} open={hobered} >
+      <Tooltip delayDuration={1} open={hobered}  >
         <TooltipTrigger onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd} ><IconComponent className={cn("p-1 rounded transition-all  hover:text-white dartk:hover:text-white",
+          onTouchEnd={handleTouchEnd} className={cn(className)}><IconComponent className={cn("p-1 rounded transition-all  hover:text-white dartk:hover:text-white",
             hobered && item.color
           )} size={28} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false) } /></TooltipTrigger>
         {

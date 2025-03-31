@@ -20,7 +20,7 @@ export default function GlowBackground() {
         const y = (touch.clientY / window.innerHeight) * 100;
         setPosition({ x: `${x}%`, y: `${y}%` });
       }
-      console.log("touchmove", e);
+   
     };
 
     window.addEventListener("touchmove", handleTouchMove);
