@@ -64,7 +64,7 @@ export function ProjectDetail() {
           <p className="text-xl dark:text-gray-300 mb-6">{project.description}</p>
           
           <div className="flex flex-wrap gap-2 mb-6">
-            {project.stacks.map((item) => (
+            {project.stack.map((item) => (
               <IconTooltip item={item} key={item.name}/>
             ))}
           </div>
