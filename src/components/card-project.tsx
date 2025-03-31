@@ -31,14 +31,14 @@ export default function CardProjects({
   }
   
   return (
-    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-6 border rounded-md  dark:border-gray-900",className)} id={id} onClick={handleClick}>
+    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-7 border rounded-md  dark:border-gray-900",className)} id={id} >
 
       <CardContent className="-px-6 overflow-hidden rounded-t-md ">
         <img src={imageUrl} alt="image-project" className=" -rounded-t-md transition-transform duration-300 ease-in-out transform hover:scale-115 " style={{aspectRatio:"16/9"}}  loading="lazy" />
       </CardContent>
       <CardFooter className="mb-3 flex flex-col items-start gap-3">
         <div className="flex flex-col ">
-          <CardTitle className="flex flex-col"><p className="z-10 text-2xl"  >{title} </p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0   ",
+          <CardTitle className="flex flex-col cursor-pointer" onClick={handleClick}><p className="z-10 text-2xl"  >{title} </p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0   ",
             getDynamicColor(lineColor,theme)
           )}></span></CardTitle>
           <CardDescription className="mt-2">{subtitle}</CardDescription>

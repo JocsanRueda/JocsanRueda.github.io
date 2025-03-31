@@ -8,7 +8,7 @@ export type ProjectDetailType =  baseItemCard & {
   liveUrl?: string;
   date: string;
   role: string;
-  team?: string[];
+  teamSize?: number;
   commits: number;
-  linesWritten: number;
+  linesWritten: string;
 }

@@ -4,7 +4,7 @@ import { IconType } from "react-icons/lib";
 
 export type skillType = baseItemCard & {
   icon: IconType;
-  subtitle: string; 
+  subtitle?: string; 
   lineColor: ColorType; 
   footer?:string,
 };

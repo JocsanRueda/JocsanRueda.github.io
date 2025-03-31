@@ -7,7 +7,7 @@ export function Projects(){
     <div className="min-h-screen flex flex-col justify-center items-center gap-7 my-2 mx-5">
       
       <div>
-        <h1 className="text-4xl font-bold ">My Projects</h1>
+        <h1 className="text-4xl font-bold ">Proyectos</h1>
       </div>
       <div className="flex  w-full justify-center  px-5  " >
         <div className="grid grid-cols-1  lg:grid-cols-2 gap-6 ">

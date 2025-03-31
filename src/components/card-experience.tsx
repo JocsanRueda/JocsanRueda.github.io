@@ -45,7 +45,7 @@ export default function CardExperience({
   }
   
   return (
-    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-6 justify-between border rounded-md  dark:border-gray-900 max-w-5xl  cursor-pointer transition-all",className)} id={id} onClick={handleClick}>
+    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-7 justify-between border rounded-md  dark:border-gray-900 max-w-4xl  cursor-pointer transition-all",className)} id={id} onClick={handleClick}>
       <CardHeader className="flex flex-row items-center gap-3">
         
         {Icon && <Icon size={36} />}
@@ -62,7 +62,7 @@ export default function CardExperience({
       <CardFooter className="flex flex-col gap-2 ">
         <p className="text-gray-600 dark:text-gray-300">{footer}</p>
         
-        <div className="flex flex-wrap  gap-2.5 ">
+        <div className="flex flex-wrap  gap-2.5 mt-2">
           {
             stack?.map((item)=>(
               <IconTooltip item={item} key={item.icon.name}/>

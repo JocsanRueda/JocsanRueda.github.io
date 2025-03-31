@@ -4,7 +4,7 @@ export function Skills(){
 
   return <div className=" min-h-screen flex flex-col justify-center items-center gap-5 ">
     <div>
-      <h1 className="text-4xl font-bold mb-6">My Expertise</h1>
+      <h1 className="text-4xl font-bold mb-6">Habilidades</h1>
     </div>
 
     <div className=" flex  w-full justify-center  px-5  gap-1" >

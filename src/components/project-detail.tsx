@@ -119,7 +119,7 @@ export function ProjectDetail() {
               <CardHeader className="flex flex-row items-center">
                 <CheckCheck size={28} />
                 <div className="flex flex-col">
-                  <CardTitle className="flex flex-col"><p className="z-10 text-lg">Actividades</p> <span className="p-1 rounded shadow -mt-2.5 z-0  bg-red-700 dark:bg-red-900"
+                  <CardTitle className="flex flex-col"><p className="z-10 text-lg">Características</p> <span className="p-1 rounded shadow -mt-2.5 z-0  bg-red-700 dark:bg-red-900"
                   ></span></CardTitle></div>
               </CardHeader>
               <CardContent>
@@ -161,17 +161,13 @@ export function ProjectDetail() {
                   <p className="text-gray-500 dark:text-gray-300">{project.role}</p>
                 </div>
                 
-                {project.team && project.team.length > 0 && (
+                {project.teamSize && (
                   <div>
                     <div className="flex items-center text-gray-700 dark:text-gray-400 mb-1">
                       <Users className="h-4 w-4 mr-2" />
-                      <span className="text-sm">Equipo</span>
+                      <span className="text-sm">Tamaño de equipo</span>
                     </div>
-                    <ul className="space-y-1">
-                      {project.team.map((member, index) => (
-                        <li key={index} className="text-gray-500 dark:text-gray-300">{member}</li>
-                      ))}
-                    </ul>
+                    <span  className="text-gray-500 dark:text-gray-300">{project.teamSize}</span>
                   </div>
                 )}
               </CardContent>
