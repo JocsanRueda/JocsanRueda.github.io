@@ -27,6 +27,7 @@ import { Toaster } from "sonner";
 import { toast } from "sonner"
 import { useTheme } from "@/components/theme-provider";
 import { IconTooltip } from "@/components/icon-tooltip";
+import { linksEnum } from "@/data/links/data";
 export function ContactPage() {
  
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -88,7 +89,7 @@ export function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen  flex items-center justify-center px-5 p sm:px-4 py-16">
+    <div className=" flex items-center justify-center px-5 p sm:px-4 py-10  my-10 sm:my-20">
       <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 sm:gap-6 lg:gap-12">
 
         <div className="space-y-8">
@@ -128,7 +129,7 @@ export function ContactPage() {
     
           <div className="flex space-x-6 my-5">
             <a 
-              href="https://linkedin.com/in/tuusuario" 
+              href={linksEnum.LINKEDIN}
               target="_blank" 
               rel="noopener noreferrer"
             
@@ -136,7 +137,7 @@ export function ContactPage() {
               <IconTooltip className="w-6 h-6-1" item={icons.linkedin} />
             </a>
             <a 
-              href="https://drive.google.com/file/d/1BakgeZIuuClSYuifRQ9iqmrwM6WWz5Pw/view?usp=sharing" 
+              href={linksEnum.CURIICULUM}
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-gray-400 transition-colors"

@@ -13,6 +13,7 @@ import { SidebarTrigger } from "./ui/sidebar"
 import { useActiveSection } from "@/context/active-section.context"
 import { cn } from "@/lib/utils"
 import { routeEnum } from "@/shared/enum/route.enum"
+import { linksEnum } from "@/data/links/data"
 export function MenuBar() {
 
   const { setTheme,theme } = useTheme()
@@ -76,7 +77,7 @@ export function MenuBar() {
         </NavigationMenuItem>
         
         <NavigationMenuItem>
-          <NavigationMenuLink href="https://github.com/JocsanRueda" aria-label="Jocasn Rueda Github" ><FaGithub className="" /></NavigationMenuLink>
+          <NavigationMenuLink href={linksEnum.GITHUB} aria-label="Jocasn Rueda Github" ><FaGithub className="" /></NavigationMenuLink>
         </NavigationMenuItem>
 
       </NavigationMenuList>
