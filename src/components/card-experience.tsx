@@ -45,11 +45,11 @@ export default function CardExperience({
   }
   
   return (
-    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-7 justify-between border rounded-md  dark:border-gray-900   max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl  cursor-pointer transition-all",className)} id={id} onClick={handleClick}>
+    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-7 justify-between border rounded-md  dark:border-gray-900   max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl  cursor-pointer transition-opacity hover:opacity-100 ",className)} id={id} onClick={handleClick}>
       <CardHeader className="flex flex-row items-center gap-3">
         
         {Icon && <Icon size={36} />}
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
           <CardTitle className="flex flex-col"><p className="z-10 text-2xl">{title}</p> <span className={cn("p-1.5 rounded shadow -mt-3 z-0  ",
             getDynamicColor(lineColor,theme)
           )}></span></CardTitle>
