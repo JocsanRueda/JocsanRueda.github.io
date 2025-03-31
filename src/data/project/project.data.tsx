@@ -4,7 +4,9 @@ import luqaImage from "@/assets/images/luqa-website.png";
 import networkCalculatorImagen from "@/assets/images/network-calculator.png";
 import { RiTailwindCssFill } from "react-icons/ri";
 import unahWebImage from "@/assets/images/unah-website.png";
-export const data=[
+import { projectType } from "./types/project.type";
+
+export const data : projectType[]=[
   {
     id:"luqa",
     title:"Luqa App (BackEnd)",
@@ -12,7 +14,7 @@ export const data=[
     description:"This is a description",
     imageUrl:luqaImage,
     lineColor:"blue",
-    icons:[
+    stack:[
       {
         icon:SiNestjs,
         name:"NestJS",
@@ -50,7 +52,7 @@ export const data=[
     description:"This is a description",
     imageUrl:networkCalculatorImagen,
     lineColor:"orange",
-    icons:[
+    stack:[
       {
         icon:FaReact,
         name:"React",
@@ -80,8 +82,8 @@ export const data=[
     subtitle:"University Project",
     description:"This is a description",
     imageUrl:unahWebImage,
-    LineColor:"blue",
-    icons:[
+    lineColor:"blue",
+    stack:[
       {
         icon:FaReact,
         name:"React",

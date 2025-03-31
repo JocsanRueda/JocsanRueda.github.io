@@ -1,30 +1,31 @@
-import { routeEnum } from "@/shared/route.enum";
+import { routeEnum } from "@/shared/enum/route.enum";
 import { Contact, FolderKanban, House, SquareKanban, Sword } from "lucide-react";
+import { menuItemType } from "./types/menu.type";
 
-export const data=[
+export const data : menuItemType[]=[
 
   {
-    name:'Inicio',
+    name:"Inicio",
     url:routeEnum.HOME,
     icon:House,
   },
   {
-    name:'Habilidades',
-    url:routeEnum.EXPERTISE,
+    name:"Habilidades",
+    url:routeEnum.SKILLS,
     icon:Sword,
   },
   {
-    name:'Experiencia',
+    name:"Experiencia",
     url:routeEnum.EXPERIENCE,
     icon:SquareKanban,
   },
   {
-    name:'Proyectos',
+    name:"Proyectos",
     url:routeEnum.PROJECTS,
     icon:FolderKanban,
   },
   {
-    name:'Contacto',
+    name:"Contacto",
     url:routeEnum.CONTACT,
     icon:Contact,
   }

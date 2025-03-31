@@ -1,28 +1,12 @@
-import { iconItem } from "@/common/types/cards";
 import { FaReact } from "react-icons/fa";
 import { SiJavascript, SiTypescript, SiCss3, SiHtml5, SiShadcnui, SiBootstrap, SiReactrouter, SiZod } from "react-icons/si";
 import luqaImage from "@/assets/images/luqa-website.png";
 import netWorkCalculatorImage from "@/assets/images/network-calculator.png"
 import unahWebImage from "@/assets/images/unah-website.png"
 import { RiTailwindCssFill } from "react-icons/ri";
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  longDescription: string;
-  image: string;
-  stacks: iconItem[];
-  features: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  date: string;
-  role: string;
-  team?: string[];
-  commits: number;
-  linesWritten: number;
-}
+import { ProjectDetailType } from "./types/project-detail.type";
 
-export const data: Project[] = [
+export const data: ProjectDetailType[] = [
   {
     id: "luqa",
     title: "E-commerce Platform",
@@ -31,7 +15,7 @@ export const data: Project[] = [
     image: luqaImage,
     commits: 116,
     linesWritten: 200,
-    stacks :[
+    stack :[
       {
         icon:FaReact,
         name:"React",
@@ -91,7 +75,7 @@ export const data: Project[] = [
     commits: 116,
     linesWritten: 200,
   
-    stacks :[
+    stack :[
       {
         icon:FaReact,
         name:"React",
@@ -136,7 +120,7 @@ export const data: Project[] = [
     image: unahWebImage,
     commits: 116,
     linesWritten: 200,
-    stacks :[
+    stack :[
       {
         icon:FaReact,
         name:"React",

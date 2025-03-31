@@ -7,11 +7,11 @@ import { MenuBar } from "@/components/menu-bar"
 import ParticlesBackGround from "@/components/particles-background"
 import { ThemeProvider } from "@/components/theme-provider"
 
-import { Expertise } from "@/page/expertise"
-import { Projects } from "@/page/project"
-import { Experience } from "./page/experience"
-import { routeEnum } from "./shared/route.enum"
-import ContactPage from "./page/contact"
+import { Skills } from "@/pages/skills"
+import { Projects } from "@/pages/project"
+import { Experience } from "./pages/experience"
+import { routeEnum } from "./shared/enum/route.enum"
+import ContactPage from "./pages/contact"
 import { AnimationSection } from "./components/animation-section"
 import ProjectDetail from "./components/project-detail"
 import ExperienceDetail from "./components/experience-detail"
@@ -21,7 +21,7 @@ function App() {
 
   const sections = [
     { url: routeEnum.HOME, component: <HeroSection /> },
-    { url: routeEnum.EXPERTISE, component: <Expertise /> },
+    { url: routeEnum.SKILLS, component: <Skills /> },
     { url: routeEnum.EXPERIENCE, component: <Experience /> },
     { url: routeEnum.PROJECTS, component: <Projects /> },
     { url: routeEnum.CONTACT, component: <ContactPage /> },

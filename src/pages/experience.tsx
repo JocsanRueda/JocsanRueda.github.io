@@ -1,5 +1,5 @@
 import CardExperience from "@/components/card-experience";
-import { data } from "@/data/experience.data";
+import { data } from "@/data/experience/experience.data";
 export function Experience(){
 
   return <div className=" min-h-screen flex flex-col justify-center items-center gap-7 mx-5 ">

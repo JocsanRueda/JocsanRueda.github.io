@@ -1,5 +1,5 @@
 import CardProjects from "@/components/card-project"
-import { data } from "@/data/project.data"
+import { data } from "@/data/project/project.data"
 export function Projects(){
 
   return (
@@ -16,13 +16,14 @@ export function Projects(){
             data.map((item)=>{
 
               return <CardProjects key={item.title}
-                id={item.id}
+                id={item.id }
+                description={item.description}
                 title={item.title}
                 subtitle={item.subtitle} 
                 className="border rounded-md opacity-85 grow-1" 
                 lineColor={item.lineColor}
                 imageUrl={item.imageUrl}
-                icons={item.icons}
+                stack={item.stack}
   
               />
             })

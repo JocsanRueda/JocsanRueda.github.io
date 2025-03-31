@@ -20,7 +20,7 @@ import {
 
 import { FaGithub } from "react-icons/fa";
 import { IconTooltip } from "./icon-tooltip";
-import { data } from "@/data/detail-project.data";
+import { data } from "@/data/project/detail-project.data";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 export function ProjectDetail() {

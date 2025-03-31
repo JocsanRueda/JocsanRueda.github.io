@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { data } from "@/data/experience.data";
+import { data } from "@/data/experience/experience.data";
 import { IconTooltip } from "@/components/icon-tooltip";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";

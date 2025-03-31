@@ -1,10 +1,10 @@
 import CardSkill from "@/components/card-skill";
-import { data } from "@/data/skills.data";
-export function Expertise(){
+import { data } from "@/data/skills/skills.data";
+export function Skills(){
 
   return <div className=" min-h-screen flex flex-col justify-center items-center gap-5 ">
     <div>
-      <h1 className="text-4xl font-bold ">My Expertise</h1>
+      <h1 className="text-4xl font-bold mb-6">My Expertise</h1>
     </div>
 
     <div className=" flex  w-full justify-center  px-5  gap-1" >
@@ -13,14 +13,15 @@ export function Expertise(){
           data.map((item)=>(
 
             <CardSkill key={item.title}
+              id={item.id}
               icon={item.icon} 
               title={item.title}
               subtitle={item.subtitle}
-              description={item.Description}
+              description={item.description}
               footer={item.footer}
               className="opacity-85"
               lineColor={item.lineColor}
-              items={item.stacks}
+              stack={item.stack}
             />
           ))
         }

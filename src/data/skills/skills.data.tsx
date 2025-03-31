@@ -3,16 +3,18 @@ import { FaWindows, FaLinux, FaGit, FaGithub, FaJava, FaServer, FaAws, FaReact }
 import { MdComputer } from "react-icons/md";
 import { SiCplusplus, SiPython, SiOctave, SiNestjs, SiJest, SiSwagger, SiJavascript, SiTypescript, SiCss3, SiHtml5, SiShadcnui, SiBootstrap } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import { skillType } from "./types/skill.type.data";
 
-export const data=[
+export const data : skillType[]=[
   {
+    id:"teckStack",
     icon:Swords,
     title: "Teck Stack",
     subtitle: "Development",
-    Description:"VsCode, Git, GitHub, linux and more",
+    description:"VsCode, Git, GitHub, linux and more",
 
     lineColor:"orange",
-    stacks : [
+    stack : [
       {
         icon:FaWindows,
         name:"Windows",
@@ -43,13 +45,14 @@ export const data=[
   },
  
   {
+    id:"otherLanguajes",
     icon:Braces,
     title: "Other Languajes",
     subtitle: "Development",
-    Description:"Proficient in C++, Python, Java, and Octave",
+    description:"Proficient in C++, Python, Java, and Octave",
 
     lineColor:"green",
-    stacks : [
+    stack : [
       {
         icon:SiCplusplus,
         name:"C++",
@@ -78,13 +81,13 @@ export const data=[
 
   },
   {
+    id:"Backend",
     icon:FaServer,
     title: "Backend",
     subtitle: "Development",
-    Description:"Proficient in building and optimizing backend services using NestJS, TypeScript, and AWS. Experience with authentication, API Gateway, and database management.",
-
+    description:"Proficient in building and optimizing backend services using NestJS, TypeScript, and AWS. Experience with authentication, API Gateway, and database management.",
     lineColor:"blue",
-    stacks : [
+    stack : [
       {
         icon:SiNestjs,
         name:"NestJS",
@@ -114,15 +117,15 @@ export const data=[
   },
 
   {
-
+    id:"Frontend",
     icon:MdComputer,
     title: "Frontend ",
     subtitle: "Development",
-    Description:"Passionate about UI/UX. Experienced in developing modern, responsive interfaces using React, NextJS, TailwindCSS, and Radix UI.",
+    description:"Passionate about UI/UX. Experienced in developing modern, responsive interfaces using React, NextJS, TailwindCSS, and Radix UI.",
     footer:"Focused on creating intuitive and accessible designs.",
 
     lineColor:"red",
-    stacks : [
+    stack : [
       {
         icon:FaReact,
         name:"React",

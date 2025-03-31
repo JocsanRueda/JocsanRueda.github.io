@@ -2,37 +2,13 @@ import {
   Layout, 
   Server
 } from "lucide-react";
-import { LucideIcon } from "lucide-react";
-import { IconType } from "react-icons/lib";
 import { FaAws, FaWindows } from "react-icons/fa";
 import { SiNestjs, SiTypescript, SiJest, SiSwagger,SiJira, SiNodedotjs, SiAnydesk } from "react-icons/si";
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { VscVscode } from "react-icons/vsc";
-export interface Stack {
-  icon: LucideIcon | IconType;
-  name: string;
-  color: string;
-}
+import { experienceType } from "./types/experience.type";
 
-export interface Experience {
-  icon?: LucideIcon | IconType;
-  lineColor: string;
-  id: string;
-  company: string;
-  position: string;
-  period: string;
-  contractType: string;
-  location: string;
-  description: string;
-  responsibilities: string[];
-  achievements: string[];
-  linkedinUrl: string;
-  companyUrl: string;
-  stack: Stack[];
-  contactCompany?:string;
-}
-
-export const data: Experience[]  = [
+export const data: experienceType[]  = [
   {
     icon:Layout,
     lineColor:"green",

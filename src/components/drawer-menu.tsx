@@ -8,7 +8,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { data } from "@/data/menu-bar.data";
+import { data } from "@/data/menu/menu-bar.data";
 import { Menu, X } from "lucide-react";
 
 export function DrawerMenu() {

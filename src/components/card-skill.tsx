@@ -3,20 +3,14 @@ import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons/lib";
 import { IconTooltip } from "./icon-tooltip";
-import { iconItem } from "@/common/types/cards";
 import { useTheme } from "./theme-provider";
 import { getDynamicColor } from "@/utils/styles.utils";
+import { skillType } from "@/data/skills/types/skill.type.data";
 
-type CardProps = {
-  icon?: LucideIcon | IconType;
-  title: string;
-  subtitle: string;
-  description: string;
-  footer?: string;
-  borderColor?: string;
-  lineColor?: string;
+type CardProps = skillType & {
+ 
   className?: string;
-  items?: iconItem[] ;
+ 
 };
 
 export default function CardSkill({
@@ -27,15 +21,14 @@ export default function CardSkill({
   footer,
   lineColor = "blue",
   className="",
-  items
+  stack,
 }: CardProps) {
 
   const {theme}= useTheme();
 
   const Icon=(icon as LucideIcon | IconType) || null  ;
-
   return (
-    <div className={cn(`bg-sidebar dark:bg-black  dark:text-white  p-6  max-w-sm flex flex-col gap-5 justify-between border rounded-md  dark:border-gray-900`,className)}>
+    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  p-6  max-w-sm flex flex-col gap-5 justify-between border rounded-md  dark:border-gray-900",className)}>
       <CardHeader className="flex flex-row items-center gap-3">
         
         {Icon && <Icon size={36} />}
@@ -53,7 +46,7 @@ export default function CardSkill({
         <p className="text-gray-300">{footer}</p>
         <div className="flex flex-wrap  gap-2.5">
           {
-            items?.map((item)=>(
+            stack?.map((item)=>(
               <IconTooltip item={item} key={item.icon.name}/>
             ))
           }

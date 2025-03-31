@@ -7,13 +7,13 @@ import {
 import { Switch } from "@/components/ui/switch"
 import { useTheme } from "./theme-provider"
 import { Link,scroller } from "react-scroll"
-import { data } from "@/data/menu-bar.data"
+import { data } from "@/data/menu/menu-bar.data"
 import { FaGithub } from "react-icons/fa"
 import { SidebarTrigger } from "./ui/sidebar"
 import { useActiveSection } from "@/context/active-section.context"
 import { cn } from "@/lib/utils"
 import { useLocation, useNavigate } from "react-router-dom"
-import { routeEnum } from "@/shared/route.enum"
+import { routeEnum } from "@/shared/enum/route.enum"
 export function MenuBar() {
 
   const { setTheme,theme } = useTheme()

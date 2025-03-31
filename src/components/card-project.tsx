@@ -1,19 +1,15 @@
 import { CardContent, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { IconTooltip } from "./icon-tooltip";
-import { iconItem } from "@/common/types/cards";
 import { useNavigate } from "react-router-dom";
 import { getDynamicColor } from "@/utils/styles.utils";
 import { useTheme } from "./theme-provider";
+import { projectType } from "@/data/project/types/project.type";
 
-type CardProps = {
-  id:string,
-  title: string;
-  subtitle: string;
-  lineColor?: string;
+type CardProps = projectType & {
+ 
   className?: string;
-  imageUrl: string;
-  icons: iconItem[];
+
 };
 
 export default function CardProjects({
@@ -23,7 +19,7 @@ export default function CardProjects({
   lineColor = "blue",
   className="",
   imageUrl,
-  icons,
+  stack,
 }: CardProps) {
 
   const {theme}=useTheme();
@@ -35,7 +31,7 @@ export default function CardProjects({
   }
   
   return (
-    <div className={cn(`bg-sidebar dark:bg-black  dark:text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-6 border rounded-md  dark:border-gray-900`,className)} id={id} onClick={handleClick}>
+    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-6 border rounded-md  dark:border-gray-900",className)} id={id} onClick={handleClick}>
 
       <CardContent className="-px-6 overflow-hidden rounded-t-md ">
         <img src={imageUrl} alt="image" className=" -rounded-t-md transition-transform duration-300 ease-in-out transform hover:scale-115 " />
@@ -50,7 +46,7 @@ export default function CardProjects({
 
         <div className="flex flex-wrap  gap-2.5">
           {
-            icons?.map((item)=>(
+            stack?.map((item)=>(
               <IconTooltip item={item} key={item.icon.name}/>
             ))
           }

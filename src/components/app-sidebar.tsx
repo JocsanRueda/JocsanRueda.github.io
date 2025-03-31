@@ -9,7 +9,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { useActiveSection } from "@/context/active-section.context"
-import { data } from "@/data/menu-bar.data"
+import { data } from "@/data/menu/menu-bar.data"
 import { cn } from "@/lib/utils"
 
 import {Link } from "react-scroll"

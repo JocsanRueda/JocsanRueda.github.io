@@ -1,13 +1,14 @@
 import { iconItem } from "@/common/types/cards";
 import { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { routeEnum } from "@/shared/route.enum";
+import { routeEnum } from "@/shared/enum/route.enum";
 import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons/lib";
 import { useNavigate } from "react-router-dom";
 import { IconTooltip } from "./icon-tooltip";
 import { getDynamicColor } from "@/utils/styles.utils";
 import { useTheme } from "./theme-provider";
+import { ColorType } from "@/shared/types/color.type";
 
 type CardProps = {
   id: string;
@@ -17,7 +18,7 @@ type CardProps = {
   description: string;
   footer?: string;
   borderColor?: string;
-  lineColor?: string;
+  lineColor?: ColorType;
   className?: string;
   stack?: iconItem[];
 };
@@ -44,7 +45,7 @@ export default function CardExperience({
   }
   
   return (
-    <div className={cn(`bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-6 justify-between border rounded-md  dark:border-gray-900 max-w-5xl  cursor-pointer transition-all`,className)} id={id} onClick={handleClick}>
+    <div className={cn("bg-sidebar dark:bg-black  dark:text-white  p-6   flex flex-col gap-6 justify-between border rounded-md  dark:border-gray-900 max-w-5xl  cursor-pointer transition-all",className)} id={id} onClick={handleClick}>
       <CardHeader className="flex flex-row items-center gap-3">
         
         {Icon && <Icon size={36} />}
