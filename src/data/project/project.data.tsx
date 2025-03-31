@@ -1,9 +1,9 @@
 import { FaAws, FaReact } from "react-icons/fa";
 import { SiNestjs, SiTypescript, SiJest, SiSwagger, SiShadcnui, SiJavascript, SiBootstrap, SiReactrouter, SiZod } from "react-icons/si";
-import luqaImage from "@/assets/images/luqa-website.png";
-import networkCalculatorImagen from "@/assets/images/network-calculator.png";
+import luqaImage from "@/assets/images/luqa-website.webp";
+import networkCalculatorImagen from "@/assets/images/network-calculator.webp";
 import { RiTailwindCssFill } from "react-icons/ri";
-import unahWebImage from "@/assets/images/unah-website.png";
+import unahWebImage from "@/assets/images/unah-website.webp";
 import { projectType } from "./types/project.type";
 
 export const data : projectType[]=[

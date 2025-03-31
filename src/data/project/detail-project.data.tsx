@@ -1,8 +1,8 @@
 import { FaReact } from "react-icons/fa";
 import { SiJavascript, SiTypescript, SiCss3, SiHtml5, SiShadcnui, SiBootstrap, SiReactrouter, SiZod } from "react-icons/si";
-import luqaImage from "@/assets/images/luqa-website.png";
-import netWorkCalculatorImage from "@/assets/images/network-calculator.png"
-import unahWebImage from "@/assets/images/unah-website.png"
+import luqaImage from "@/assets/images/luqa-website.webp";
+import netWorkCalculatorImage from "@/assets/images/network-calculator.webp"
+import unahWebImage from "@/assets/images/unah-website.webp"
 import { RiTailwindCssFill } from "react-icons/ri";
 import { ProjectDetailType } from "./types/project-detail.type";
 
