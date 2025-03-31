@@ -50,7 +50,7 @@ export function MenuBar() {
  
   return (
         
-    <NavigationMenu className=" mb-0.5 flex flex-row  justify-between border-b border-dashed backdrop-blur-[5px] max-w-none px-2 fixed z-10 w-full py-0.5 " >
+    <NavigationMenu className=" mb-0.5 flex flex-row  justify-between border-b border-dashed backdrop-blur-[5px]   max-w-none px-2 fixed z-10 w-full py-0.5 " >
 
       <NavigationMenuLink className="block sm:hidden">
           

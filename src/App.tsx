@@ -3,7 +3,6 @@ import { Suspense, lazy } from "react";
 import BlurBackground from "@/components/blur-background";
 import GlowBackground from "@/components/glow-background";
 import Layout from "@/components/layout";
-import { MenuBar } from "@/components/menu-bar";
 import ParticlesBackGround from "@/components/particles-background";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routeEnum } from "./shared/enum/route.enum";
@@ -36,7 +35,7 @@ function App() {
             <BlurBackground />
 
             <Layout>
-              <MenuBar />
+              
               <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
                   <Route
