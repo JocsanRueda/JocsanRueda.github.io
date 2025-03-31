@@ -78,7 +78,31 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
       },
     },
     detectRetina: true,
+    responsive: [
+      {
+        maxWidth: 768, 
+        options: {
+          particles: {
+            number: {
+              value: 60, 
+            }
+          },
+        },
+      },
+      {
+        maxWidth: 1024,
+        options: {
+          particles: {
+            number: {
+              value: 80, 
+            },
+            
+          },
+        },
+      },
+    ],
   }
+  
 }
 
 export const darkParticlesConfig : ISourceOptions =  commonParticlesConfig("#000","#ffffff","#ffffff") 
