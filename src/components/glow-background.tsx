@@ -13,11 +13,23 @@ export default function GlowBackground() {
       setPosition({ x: `${x}%`, y: `${y}%` });
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        const x = (touch.clientX / window.innerWidth) * 100;
+        const y = (touch.clientY / window.innerHeight) * 100;
+        setPosition({ x: `${x}%`, y: `${y}%` });
+      }
+      console.log("touchmove", e);
+    };
+
+    window.addEventListener("touchmove", handleTouchMove);
     window.addEventListener("mousemove", handleMouseMove);
 
     // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 

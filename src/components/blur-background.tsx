@@ -21,7 +21,7 @@ export default function BlurBackground() {
   const blurClass = clsx({
     "backdrop-blur-0": blur === 0,
     "backdrop-blur-[2px]": blur === 1,
-    "backdrop-blur-[6px]": blur === 2,
+    "backdrop-blur-[4px]": blur === 2,
   });
   
   return (
