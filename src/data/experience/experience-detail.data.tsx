@@ -91,7 +91,7 @@ export const data: experienceDetailType[]  = [
     id: "infatlan",
     company: "Infatlan, Grupo Financiero Atlantida",
     position: "Asistente de soporte tecnico",
-    period: "Septiembre 2018 - Septiembre 2020",
+    period: "Septiembre 2018 - Septiembre 2018",
     contractType: "Contrato de practicas",
     location: "Tegucigalpa, Francisco Morazan, Honduras",
     shortDescription:"Brindé soporte técnico, realizando mantenimiento, resolución de problemas y diagnóstico de equipos, tanto de forma remota con AnyDesk y TightVNC como en la conexión de redes.",
