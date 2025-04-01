@@ -1,6 +1,7 @@
 import { baseItemCard } from "@/shared/types/base-item-card.type";
 
-export type ProjectDetailType =  baseItemCard & {
+export type ProjectDetailType =  Omit<baseItemCard,"description"> & {
+  description?: string;
   longDescription: string;
   image: string;
   features: string[];
@@ -11,4 +12,5 @@ export type ProjectDetailType =  baseItemCard & {
   teamSize?: number;
   commits: number;
   linesWritten: string;
+  
 }

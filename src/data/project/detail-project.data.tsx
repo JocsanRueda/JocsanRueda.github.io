@@ -9,8 +9,8 @@ import { ProjectDetailType } from "./types/project-detail.type";
 export const data: ProjectDetailType[] = [
   {
     id: "luqa",
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with payment processing",
+    title: "Software de gestión de residenciales",
+    description: "Software de gestión de residenciales",
     longDescription: "Una plataforma diseñada para la gestión integral de residenciales, facilitando el control de entradas y salidas de inquilinos, la organización de eventos y la administración de áreas comunes. La solución permite un registro detallado de visitas, optimiza la logística de entregas a domicilio y ofrece una interfaz intuitiva para gestionar eventos y reservas de espacios, garantizando seguridad, eficiencia y comodidad para todos los residentes.",
     image: luqaImage,
     commits: 18,
@@ -68,7 +68,7 @@ export const data: ProjectDetailType[] = [
   },{
     id: "network-calculator",
     title: "Calculadora de redes VLSM y Subnetting",
-    description: "A full-stack e-commerce solution with payment processing",
+    description: "Proyecto universitario",
     longDescription: "Una herramienta para dividir redes de manera eficiente utilizando el enmascarado de subredes de longitud variable (VLSM). Este proyecto permite realizar el subneado de redes, mostrando información detallada sobre las subredes generadas, optimizando la asignación de direcciones IP y adaptándose a las necesidades de tamaños variados para cada subred. VLSM ayuda a reducir el desperdicio de direcciones IP, mejora el rendimiento de la red al disminuir los dominios de difusión y permite una fácil expansión sin necesidad de rediseñar toda la estructura de direcciones IP.",
     image: netWorkCalculatorImage,
     commits: 10,
