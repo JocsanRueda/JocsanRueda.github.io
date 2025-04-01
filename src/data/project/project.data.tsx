@@ -10,7 +10,7 @@ export const data : projectType[]=[
   {
     id:"luqa",
     title:"Luqa App (BackEnd)",
-    subtitle:"Private Project (Guababit 2025)",
+    subtitle:"Proyecto privado (Guababit 2025)",
     description:"This is a description",
     imageUrl:luqaImage,
     lineColor:"blue",
@@ -47,7 +47,7 @@ export const data : projectType[]=[
   },
   {
     id:"network-calculator",
-    title:"Calc VLSM and Subnetting",
+    title:"Calculadora de red VLSM",
     subtitle:"University Project",
     description:"This is a description",
     imageUrl:networkCalculatorImagen,
@@ -78,8 +78,8 @@ export const data : projectType[]=[
   },
   {
     id:"unah-website",
-    title:"UNAH Website",
-    subtitle:"University Project",
+    title:"UNAH sitio web",
+    subtitle:"Proyceto universitario",
     description:"This is a description",
     imageUrl:unahWebImage,
     lineColor:"blue",
