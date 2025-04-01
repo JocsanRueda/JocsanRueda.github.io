@@ -4,6 +4,7 @@ import { useTheme } from "./theme-provider";
 import { scroller } from "react-scroll";
 import { routeEnum } from "@/shared/enum/route.enum";
 import { useActiveSection } from "@/context/active-section.context";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const {theme}=useTheme()
@@ -30,13 +31,29 @@ export default function HeroSection() {
       }
     )}>
       <div className="max-w-2xl ">
-        <p className={cn("text-md consolas-font",{
+        <p className={cn("text-sm consolas-font",{
           "text-teal-300" : theme === "dark",
-        })}>¡Hola!</p>
-        <h1 className="text-2xl lg:text-7xl font-bold mt-2">Jocsan Rueda</h1>
+        })}>¡Hola!
+        
+          <motion.span
+            className="inline-block"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 0.9, 
+            }}
+          >
+            _
+          </motion.span>
+      
+        </p>
+        
+        <h1 className="text-4xl lg:text-7xl font-bold mt-2">Jocsan Rueda</h1>
         <div className="text-balance">
           <p className={cn(
-            "lg:text-2xl font-semibold mt-2  ", {
+            "lg:text-2xl  mt-2  ", {
               "text-gray-400": theme === "dark",
             }
           )}>Ingeniero en sistemas , desarrollador full-stack </p>

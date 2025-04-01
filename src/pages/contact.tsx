@@ -26,7 +26,6 @@ import emailjs from "@emailjs/browser";
 import { Toaster } from "sonner";
 import { toast } from "sonner"
 import { useTheme } from "@/components/theme-provider";
-import { IconTooltip } from "@/components/icon-tooltip";
 import { linksEnum } from "@/data/links/data";
 export function ContactPage() {
  
@@ -75,19 +74,6 @@ export function ContactPage() {
       });
   }
 
-  const icons={
-    linkedin: {
-      name: "LinkedIn",
-      icon: FaLinkedin,
-      color: "bg-blue-800",
-    },
-    github: {
-      name: "Curriculum",
-      icon: FileText,
-      color: "bg-green-800",
-    },
-  }
-
   return (
     <div className=" flex items-center justify-center px-5 p sm:px-4 py-10  my-15 sm:my-20 ">
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 sm:gap-6 lg:gap-12 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl">
@@ -128,22 +114,16 @@ export function ContactPage() {
           </div>
     
           <div className="flex space-x-6 my-5">
-            <a 
-              href={linksEnum.LINKEDIN}
-              target="_blank" 
-              rel="noopener noreferrer"
-            
-            >
-              <IconTooltip className="w-6 h-6-1" item={icons.linkedin} />
-            </a>
-            <a 
-              href={linksEnum.CURIICULUM}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-gray-400 transition-colors"
-            >
-              <IconTooltip className="w-6 h-6" item={icons.github} />
-            </a>
+
+            <Button variant="link" className="border hover:bg-blue-800 hover:text-white">
+              <FaLinkedin className="mr-2 h-4 w-4" />
+              <a href={linksEnum.LINKEDIN} target="_blank" rel="noopener noreferrer" >Linkedin</a>
+            </Button>
+
+            <Button variant="link" className="border hover:bg-green-800 hover:text-white">
+              <FileText className="mr-2 h-4 w-4" />
+              <a href={linksEnum.CURIICULUM} target="_blank" rel="noopener noreferrer" >Curriculum</a>
+            </Button>
             
           </div>
         </div>
