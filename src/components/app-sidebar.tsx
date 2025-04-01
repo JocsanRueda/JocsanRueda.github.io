@@ -11,6 +11,7 @@ import {
 import { useActiveSection } from "@/context/active-section.context"
 import { data } from "@/data/menu/menu-bar.data"
 import { cn } from "@/lib/utils"
+import { routeEnum } from "@/shared/enum/route.enum"
 
 import {Link } from "react-scroll"
 export function AppSidebar() {
@@ -25,7 +26,16 @@ export function AppSidebar() {
   }
 
   const handleClick = async (sectionName:string) => {
-    handleActiveSection(sectionName)
+    const newActiveSection = {
+      activeSection: sectionName,
+      previousSection: window.location.pathname,
+    }
+
+    setActiveSection(newActiveSection);
+    
+    if(window.location.pathname !== routeEnum.HOME){
+      window.history.back()
+    }
   };
 
   return (
@@ -42,7 +52,8 @@ export function AppSidebar() {
               {data.map((item) => (
                 <SidebarMenuItem key={item.name}>
                   <SidebarMenuButton asChild>
-                    <Link to={item.url} smooth={true} duration={500} onSetActive={()=>handleActiveSection(item.url)}  spy={true} className={cn(activeSection.activeSection===item.url?"font-bold":"font-normal")} onClick={() => handleClick(item.url)} >
+                    <Link to={item.url} smooth={true} duration={500} onSetActive={()=>handleActiveSection(item.url)}  spy={true} className={cn(activeSection.activeSection===item.url?"font-bold":"font-normal")} onClick={() => handleClick(item.url)} 
+                      offset={-35} >
                       <item.icon />
                       {item.name}
                        

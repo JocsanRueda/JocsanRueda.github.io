@@ -130,7 +130,7 @@ export const data : skillType[]=[
   {
     id:"otherLanguajes",
     icon:Braces,
-    title: "Other Languajes",
+    title: "Otros lenguajes",
    
     description:"Experiencia en programación estructurada y orientada a objetos con lenguajes utilizados en diversas aplicaciones científicas.",
 
