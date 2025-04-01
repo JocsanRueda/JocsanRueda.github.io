@@ -25,9 +25,9 @@ export default function HeroSection() {
       }
     )}>
       <div className="max-w-2xl ">
-        <p className={cn("text-sm consolas-font",{
+        <p className={cn("text-md consolas-font",{
           "text-teal-300" : theme === "dark",
-        })}>Hola, me llamo</p>
+        })}>¡Hola!</p>
         <h1 className="text-2xl lg:text-7xl font-bold mt-2">Jocsan Rueda</h1>
         <div className="text-balance">
           <p className={cn(
