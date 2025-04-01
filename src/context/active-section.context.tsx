@@ -1,14 +1,21 @@
 import React, { createContext, useContext, useState } from "react";
 
-interface ActiveSectionContextProps {
+export type sectionType={
   activeSection: string;
-  setActiveSection: (section: string) => void;
+  previousSection: string;
+}
+interface ActiveSectionContextProps {
+  activeSection:sectionType
+  setActiveSection: (section: sectionType) => void;
 }
 
 const ActiveSectionContext = createContext<ActiveSectionContextProps | undefined>(undefined);
 
 export const ActiveSectionProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [activeSection, setActiveSection] = useState<string>("/");
+  const [activeSection, setActiveSection] = useState<sectionType>({
+    activeSection: "/",
+    previousSection: "/",
+  });
 
   return (
     <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>

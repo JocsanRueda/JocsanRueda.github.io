@@ -2,7 +2,7 @@ import CardSkill from "@/components/card-skill";
 import { data } from "@/data/skills/skills.data";
 export function Skills(){
 
-  return <div className="flex flex-col justify-center items-center gap-5  my-10 md:my-20 ">
+  return <div className="h-full flex flex-col justify-center items-center gap-5  my-10 md:my-20 ">
     <div>
       <h1 className="text-4xl font-bold mb-10">Habilidades</h1>
     </div>

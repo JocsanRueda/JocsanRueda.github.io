@@ -10,7 +10,12 @@ export default function HeroSection() {
   const {setActiveSection} = useActiveSection()
 
   const handleClick = () => {
-    setActiveSection(routeEnum.SKILLS); 
+    const newActiveSection = {
+      activeSection: routeEnum.SKILLS,
+      previousSection: routeEnum.HOME,
+    }
+    setActiveSection(newActiveSection); 
+
     scroller.scrollTo(routeEnum.SKILLS, {
       duration: 500,
       smooth: true,

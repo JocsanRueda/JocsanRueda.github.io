@@ -23,9 +23,11 @@ import { IconTooltip } from "./icon-tooltip";
 import { data } from "@/data/project/detail-project.data";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import {scroller } from "react-scroll"
+import { useActiveSection } from "@/context/active-section.context";
 import { routeEnum } from "@/shared/enum/route.enum";
 export function ProjectDetail() {
+
+  const {setActiveSection}= useActiveSection()
 
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -37,16 +39,15 @@ export function ProjectDetail() {
 
   const handleBack= async ()=>{
 
-    await new Promise((resolve)=>{
-      window.history.back()
-      setTimeout(resolve, 50);
-    });
+    const newActiveSection = {
+      activeSection: routeEnum.PROJECTS,
+      previousSection: window.location.pathname,
+
+    }
+
+    setActiveSection(newActiveSection);
    
-    scroller.scrollTo(routeEnum.PROJECTS, {
-      
-      smooth: false,
-      offset: -41, 
-    });
+    window.history.back()
     
   }
 

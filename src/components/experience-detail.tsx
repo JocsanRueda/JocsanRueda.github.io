@@ -24,10 +24,10 @@ import { IconTooltip } from "@/components/icon-tooltip";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { routeEnum } from "@/shared/enum/route.enum";
-import { scroller } from "react-scroll";
+import { useActiveSection } from "@/context/active-section.context";
 
 export function ExperienceDetail() {
-
+  const {setActiveSection}= useActiveSection()
   useEffect(()=>{
     window.scrollTo(0, 0);
   },[])
@@ -37,18 +37,15 @@ export function ExperienceDetail() {
   const experience  = data.find((item) => item.id === id);
 
   const handleBack= async ()=>{
-  
-    await new Promise((resolve)=>{
-      window.history.back()
-      setTimeout(resolve, 50);
-    });
-     
-    scroller.scrollTo(routeEnum.EXPERIENCE, {
-        
-      smooth: false,
-      offset: -41, 
-    });
-      
+    const newActiveSection = {
+      activeSection: routeEnum.EXPERIENCE,
+      previousSection: window.location.pathname,
+
+    }
+
+    setActiveSection(newActiveSection);
+    window.history.back()
+   
   }
 
   if (!experience) {

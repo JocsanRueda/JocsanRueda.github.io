@@ -1,8 +1,9 @@
 import { Element } from "react-scroll";
 import { motion } from "framer-motion";
-import { JSX } from "react";
+import  { JSX, useEffect } from "react";
 import { useActiveSection } from "@/context/active-section.context";
-
+import { routeEnum } from "@/shared/enum/route.enum";
+import {scroller } from "react-scroll"
 interface AnimationSectionProps {
   sections: {
     url: string;
@@ -11,10 +12,33 @@ interface AnimationSectionProps {
 }
 
 export function AnimationSection({ sections }: AnimationSectionProps) {
-  const {setActiveSection} = useActiveSection()
+
+  const {activeSection,setActiveSection} = useActiveSection()
   const handleTouchMove = (sectionUrl: string) => {
-    setActiveSection(sectionUrl); // Sincroniza la sección activa
+    const newActiveSection = {
+      activeSection: sectionUrl,
+      previousSection: activeSection.activeSection,
+    }
+    setActiveSection(newActiveSection); 
   };
+
+  useEffect(() => {
+
+    const specialPages=Object.values(routeEnum)
+
+    if( !specialPages.includes(activeSection.previousSection as routeEnum)){
+     
+      setTimeout(()=>{
+        scroller.scrollTo(activeSection.activeSection, {
+     
+          smooth: false,
+          offset: -41, 
+        });
+      },20)
+    }
+  
+  }, [activeSection]);
+  
   return (
     <div> 
       {sections.map((section) => (
@@ -22,6 +46,7 @@ export function AnimationSection({ sections }: AnimationSectionProps) {
           onTouchStart={() => handleTouchMove(section.url)}
           onTouchMove={() => handleTouchMove(section.url)}
           onTouchEnd={() => handleTouchMove(section.url)}
+      
           style={{
             contentVisibility:"auto",
           }}
@@ -30,7 +55,8 @@ export function AnimationSection({ sections }: AnimationSectionProps) {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount:0.2 }}
+            onMouseEnter={() => handleTouchMove(section.url)}
             
           >
             {section.component}

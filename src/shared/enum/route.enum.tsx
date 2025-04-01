@@ -3,5 +3,6 @@ export enum routeEnum{
   SKILLS = "/skills",
   PROJECTS = "/projects",
   EXPERIENCE = "/experience",
-  CONTACT = "/contact"
+  CONTACT = "/contact",
+
 }
