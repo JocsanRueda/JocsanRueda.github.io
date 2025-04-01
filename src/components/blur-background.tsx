@@ -12,7 +12,7 @@ export default function BlurBackground() {
   
   useEffect(()=>{
     
-    if(activeSection===routeEnum.HOME &&  location.pathname===routeEnum.HOME)
+    if(activeSection.activeSection===routeEnum.HOME &&  location.pathname===routeEnum.HOME)
       setBlur(0)
     else 
       setBlur(2)
