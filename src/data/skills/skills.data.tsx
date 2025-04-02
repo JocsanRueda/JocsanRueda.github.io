@@ -155,7 +155,7 @@ export const data: skillType[] = [
     title: "Base de datos",
 
     description: "Experiencia en bases de datos SQL y NoSQL, incluyendo diseño, optimización y gestión de datos para aplicaciones modernas.",
-    lineColor: "green",
+    lineColor: "purple",
     stack: [
       {
         icon: DiMsqlServer,
