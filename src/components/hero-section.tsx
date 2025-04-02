@@ -1,13 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { useTheme } from "./theme-provider";
 import { scroller } from "react-scroll";
 import { routeEnum } from "@/shared/enum/route.enum";
 import { useActiveSection } from "@/context/active-section.context";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
-  const {theme}=useTheme()
+
   const {setActiveSection} = useActiveSection()
 
   const handleClick = () => {
@@ -25,15 +23,11 @@ export default function HeroSection() {
     
   }
   return (
-    <div className={cn("min-h-screen flex items-center justify-center p-1",
-      {
-        "text-white": theme === "dark",
-      }
-    )}>
+    <div className="min-h-screen flex items-center justify-center p-1 dark:text-white"
+    >
       <div className="max-w-2xl ">
-        <p className={cn("text-sm consolas-font",{
-          "text-teal-300" : theme === "dark",
-        })}>¡Hola!
+        <p className="text-sm consolas-font dark:text-teal-300"
+        >¡Hola!
         
           <motion.span
             className="inline-block"
@@ -52,16 +46,12 @@ export default function HeroSection() {
         
         <h1 className="text-4xl lg:text-7xl font-bold mt-2">Jocsan Rueda</h1>
         <div className="text-balance">
-          <p className={cn(
-            "lg:text-2xl  mt-2  ", {
-              "text-gray-400": theme === "dark",
-            }
-          )}>Ingeniero en sistemas , desarrollador full-stack </p>
+          <p className= "lg:text-2xl  mt-2  dark:text-gray-400"
+            
+          >Ingeniero en sistemas , desarrollador full-stack </p>
         </div>
        
-        <Button className={cn("mt-6 border  text-teal-30 bg-teal-300text-black dark:hover:text-black hover:text-white",
-          (theme==="dark"?"border-teal-300":"border-gray-700")
-        )} onClick={handleClick}>
+        <Button className="mt-6 border  text-teal-30 bg-teal-300text-black dark:hover:text-black hover:text-white dark:border-teal-300 border-gray-700" onClick={handleClick} name="skills-button">
           Ver mas
         </Button>
       </div>

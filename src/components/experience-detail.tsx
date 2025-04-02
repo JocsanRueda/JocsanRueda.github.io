@@ -52,7 +52,7 @@ export function ExperienceDetail() {
     return (
       <div className="flex flex-col items-center justify-center h-screen dark:bg-black dark:*:text-white">
         <h1 className="text-2xl mb-4">Experiencia no encontrada</h1>
-        <Button variant="outline" onClick={handleBack}>
+        <Button variant="outline" onClick={handleBack} name="back-button">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Volver
         </Button>
@@ -68,6 +68,7 @@ export function ExperienceDetail() {
           variant="ghost" 
           className="mb-8 dark:text-gray-400 hover:text-white hover:bg-gray-800 border dark:border-none"
           onClick={handleBack}
+          name="back-button"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Volver 
@@ -86,13 +87,13 @@ export function ExperienceDetail() {
           
           <div className="flex gap-4">
             {experience.linkedinUrl && (
-              <Button variant="ghost" className="border hover:bg-gray-800 hover:text-white">
+              <Button variant="ghost" className="border hover:bg-gray-800 hover:text-white" name="linkedin-button">
                 <FaLinkedin className="mr-2 h-4 w-4" />
                 <a href={experience.linkedinUrl}>LinkedIn</a>
               </Button>
             )}
             {experience.companyUrl && (
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white" name="company-button">
                 <ExternalLink className="mr-2 h-4 w-4" />
                 <a href={experience.companyUrl}>Sitio web</a>
               </Button>

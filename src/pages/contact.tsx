@@ -115,12 +115,12 @@ export function ContactPage() {
     
           <div className="flex space-x-6 my-5">
 
-            <Button variant="link" className="border hover:bg-blue-800 hover:text-white">
+            <Button variant="link" className="border hover:bg-blue-800 hover:text-white" name="linkedin-button">
               <FaLinkedin className="mr-2 h-4 w-4" />
               <a href={linksEnum.LINKEDIN} target="_blank" rel="noopener noreferrer" >Linkedin</a>
             </Button>
 
-            <Button variant="link" className="border hover:bg-green-800 hover:text-white">
+            <Button variant="link" className="border hover:bg-green-800 hover:text-white" name="github-button">
               <FileText className="mr-2 h-4 w-4" />
               <a href={linksEnum.CURIICULUM} target="_blank" rel="noopener noreferrer" >Curriculum</a>
             </Button>
@@ -182,6 +182,7 @@ export function ContactPage() {
                     variant="outline"
                     type="submit" 
                     className="w-full  hover:bg-blue-800 transition-colors text-gray-600 hover:text-white dark:text-white "
+                    name="submit-button"
                   >
                     <Send className="mr-2 w-4 h-4" /> Enviar Mensaje
                   </Button>

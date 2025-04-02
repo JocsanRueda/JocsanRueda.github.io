@@ -55,7 +55,7 @@ export function ProjectDetail() {
     return (
       <div className="flex flex-col items-center justify-center h-screen dark:bg-black dark:*:text-white">
         <h1 className="text-2xl mb-4">Proyecto no encontrado</h1>
-        <Button variant="outline" onClick={handleBack}>
+        <Button variant="outline" onClick={handleBack} name="back-button">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Volver
         </Button>
@@ -70,7 +70,7 @@ export function ProjectDetail() {
         <Button 
           variant="ghost" 
           className="mb-8 dark:text-gray-400 hover:text-white hover:bg-gray-800 border dark:border-none"
-          onClick={handleBack}
+          onClick={handleBack} name="back-button"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Volver 
@@ -89,13 +89,13 @@ export function ProjectDetail() {
           
           <div className="flex gap-4">
             {project.githubUrl && (
-              <Button variant="ghost" className="border hover:bg-gray-800 hover:text-white">
+              <Button variant="ghost" className="border hover:bg-gray-800 hover:text-white" name="github-button">
                 <FaGithub className="mr-2 h-4 w-4" />
                 <a href={project.githubUrl}>Repositorio</a>
               </Button>
             )}
             {project.liveUrl && (
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white" name="live-button">
                 <ExternalLink className="mr-2 h-4 w-4" />
                 <a href={project.liveUrl}>Sitio web </a>
               </Button>
