@@ -33,7 +33,7 @@ export function AboutMe() {
               estoy en búsqueda de aprender nuevas tecnologías.
           </p>
           <p>
-              En mi tiempo libre me gusta hacer deporte, leer, en especial sobre los grandes clásicos, historia y algunas bras modernas.
+          En mi tiempo libre, disfruto hacer deporte y leer, especialmente los grandes clásicos de la literatura, temas históricos y algunas obras modernas.
           </p>
         </CardContent>
       </Card>
