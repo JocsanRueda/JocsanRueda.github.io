@@ -1,5 +1,5 @@
-import { ColorType } from "@/shared/types/color.type";
-import { StackItem } from "@/shared/types/stack.type";
+import { ColorType } from "@/common/types/color.type";
+import { StackItem } from "@/common/types/stack.type";
 import { IconType } from "react-icons/lib";
 
 export interface experienceDetailType {

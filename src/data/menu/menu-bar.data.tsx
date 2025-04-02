@@ -1,4 +1,4 @@
-import { routeEnum } from "@/shared/enum/route.enum";
+import { routeEnum } from "@/common/enum/route.enum";
 import { Contact, FolderKanban, House, SquareKanban, Sword } from "lucide-react";
 import { menuItemType } from "./types/menu.type";
 

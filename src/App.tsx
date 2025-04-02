@@ -5,7 +5,7 @@ import GlowBackground from "@/components/glow-background";
 import Layout from "@/components/layout";
 import ParticlesBackGround from "@/components/particles-background";
 import { ThemeProvider } from "@/components/theme-provider";
-import { routeEnum } from "./shared/enum/route.enum";
+import { routeEnum } from "./common/enum/route.enum";
 import { ActiveSectionProvider } from "./context/active-section.context";
 
 // Lazy-loaded components

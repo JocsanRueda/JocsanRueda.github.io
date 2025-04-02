@@ -23,7 +23,7 @@ import { data } from "@/data/experience/experience-detail.data";
 import { IconTooltip } from "@/components/icon-tooltip";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { routeEnum } from "@/shared/enum/route.enum";
+import { routeEnum } from "@/common/enum/route.enum";
 import { useActiveSection } from "@/context/active-section.context";
 
 export function ExperienceDetail() {

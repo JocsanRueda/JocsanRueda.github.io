@@ -4,4 +4,5 @@ export type StackItem = {
   icon: IconType; 
   name: string;
   color: string; 
+  classNameIcon?: string;
 };

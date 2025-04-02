@@ -2,7 +2,7 @@ import { Element } from "react-scroll";
 import { motion } from "framer-motion";
 import  { JSX, useEffect } from "react";
 import { useActiveSection } from "@/context/active-section.context";
-import { routeEnum } from "@/shared/enum/route.enum";
+import { routeEnum } from "@/common/enum/route.enum";
 import {scroller } from "react-scroll"
 interface AnimationSectionProps {
   sections: {

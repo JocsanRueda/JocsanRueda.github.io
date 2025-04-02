@@ -1,4 +1,4 @@
-import { ColorType } from "@/shared/types/color.type";
+import { ColorType } from "@/common/types/color.type";
 
 export function getDynamicColor(
   lineColor: ColorType,

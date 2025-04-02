@@ -7,9 +7,10 @@ import { createPortal } from "react-dom";
 export type IconTooltipProps = {
   item: iconItem;
   className?: string;
+  classNameIcon?: string;
 }
 
-export function IconTooltip({item,className}:IconTooltipProps) {
+export function IconTooltip({item,className,classNameIcon}:IconTooltipProps) {
   const IconComponent = item.icon;
   const [hobered, setHovered] = useState(false)
 
@@ -17,7 +18,6 @@ export function IconTooltip({item,className}:IconTooltipProps) {
   const handleMouseLeave = () => setHovered(false);
   const handleTouchStart = () => setHovered(true);
   const handleTouchEnd = () => setHovered(false);
-
   return<>
  
     <TooltipProvider >
@@ -26,7 +26,7 @@ export function IconTooltip({item,className}:IconTooltipProps) {
           onMouseLeave={handleMouseLeave}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd} className={cn(className)}><IconComponent className={cn("p-1 rounded transition-all  hover:text-white dartk:hover:text-white",
-            hobered && item.color
+            hobered && item.color,classNameIcon,
           )} size={28} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false) } /></TooltipTrigger>
         {
           hobered && createPortal(

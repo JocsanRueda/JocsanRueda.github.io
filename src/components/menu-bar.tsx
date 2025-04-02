@@ -13,7 +13,7 @@ import { SidebarTrigger } from "./ui/sidebar"
 import { useActiveSection } from "@/context/active-section.context"
 import { cn } from "@/lib/utils"
 import { linksEnum } from "@/data/links/data"
-import { routeEnum } from "@/shared/enum/route.enum"
+import { routeEnum } from "@/common/enum/route.enum"
 export function MenuBar() {
 
   const { setTheme,theme } = useTheme()

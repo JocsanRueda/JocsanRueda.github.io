@@ -47,7 +47,7 @@ export default function CardSkill({
         <div className="flex flex-wrap  gap-2.5">
           {
             stack?.map((item)=>(
-              <IconTooltip item={item} key={item.icon.name}/>
+              <IconTooltip item={item} key={item.icon.name} classNameIcon={item.classNameIcon}/>
             ))
           }
         </div>

@@ -1,14 +1,14 @@
 import { iconItem } from "@/common/types/cards";
 import { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { routeEnum } from "@/shared/enum/route.enum";
+import { routeEnum } from "@/common/enum/route.enum";
 import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons/lib";
 import { useNavigate } from "react-router-dom";
 import { IconTooltip } from "./icon-tooltip";
 import { getDynamicColor } from "@/utils/styles.utils";
 import { useTheme } from "./theme-provider";
-import { ColorType } from "@/shared/types/color.type";
+import { ColorType } from "@/common/types/color.type";
 
 type CardProps = {
   id: string;

@@ -1,4 +1,4 @@
-import { baseItemCard } from "@/shared/types/base-item-card.type";
+import { baseItemCard } from "@/common/types/base-item-card.type";
 
 export type ProjectDetailType =  Omit<baseItemCard,"description"> & {
   description?: string;

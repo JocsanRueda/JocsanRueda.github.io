@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { scroller } from "react-scroll";
-import { routeEnum } from "@/shared/enum/route.enum";
+import { routeEnum } from "@/common/enum/route.enum";
 import { useActiveSection } from "@/context/active-section.context";
 import { motion } from "framer-motion";
 

@@ -1,6 +1,6 @@
 import { useActiveSection } from "@/context/active-section.context";
 import { cn } from "@/lib/utils";
-import { routeEnum } from "@/shared/enum/route.enum";
+import { routeEnum } from "@/common/enum/route.enum";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";

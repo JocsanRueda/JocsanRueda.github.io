@@ -24,7 +24,7 @@ import { data } from "@/data/project/detail-project.data";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useActiveSection } from "@/context/active-section.context";
-import { routeEnum } from "@/shared/enum/route.enum";
+import { routeEnum } from "@/common/enum/route.enum";
 export function ProjectDetail() {
 
   const {setActiveSection}= useActiveSection()
