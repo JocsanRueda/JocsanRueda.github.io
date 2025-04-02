@@ -14,7 +14,8 @@ import {
   CheckCheck,
   X,
   Clipboard,
-  FileText
+  FileText,
+  Smartphone
 } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { FormProvider, useForm } from "react-hook-form";
@@ -96,6 +97,25 @@ export function ContactPage() {
                     onClick={() => {
                       navigator.clipboard.writeText("jocsanelyrueda@gmail.com");
                       toast("Correo copiado al portapapeles", {
+                        icon: <CheckCheck />,
+                      });
+                    }} 
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-4">
+              <Smartphone className="text-blue-500 w-6 h-6" />
+              <div>
+                <p className="text-sm text-gray-400">Teléfono</p>
+                <div className="flex items-center space-x-2">
+                  <p><span className="font-semibold">+504</span> 9816-2158</p>
+                  <Clipboard 
+                    className="w-5 h-5 cursor-pointer dark:text-gray-200 hover:bg-blue-500 p-0.5 hover:text-white dark:hover:text-black rounded transition-colors" 
+                    onClick={() => {
+                      navigator.clipboard.writeText("+50498162158");
+                      toast("Teléfono copiado al portapapeles", {
                         icon: <CheckCheck />,
                       });
                     }} 
