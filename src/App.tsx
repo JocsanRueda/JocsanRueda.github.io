@@ -10,6 +10,7 @@ import { ActiveSectionProvider } from "./context/active-section.context";
 
 // Lazy-loaded components
 const HeroSection = lazy(() => import("@/components/hero-section"));
+const AboutMe = lazy(() => import("@/pages/about-me"));
 const Skills = lazy(() => import("@/pages/skills"));
 const Projects = lazy(() => import("@/pages/project"));
 const Experience = lazy(() => import("./pages/experience"));
@@ -21,10 +22,14 @@ const ExperienceDetail = lazy(() => import("./components/experience-detail"));
 function App() {
   const sections = [
     { url: routeEnum.HOME, component: <HeroSection /> },
+    {
+      url: routeEnum.ABOUT_ME, component: <AboutMe />,
+    },
     { url: routeEnum.SKILLS, component: <Skills /> },
     { url: routeEnum.EXPERIENCE, component: <Experience /> },
     { url: routeEnum.PROJECTS, component: <Projects /> },
     { url: routeEnum.CONTACT, component: <ContactPage /> },
+    
   ];
 
   return (

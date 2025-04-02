@@ -10,6 +10,11 @@ export const data : menuItemType[]=[
     icon:House,
   },
   {
+    name:"Sobre Mí",
+    url:routeEnum.ABOUT_ME,
+    icon: SquareKanban,
+  },
+  {
     name:"Habilidades",
     url:routeEnum.SKILLS,
     icon:Sword,
@@ -28,5 +33,6 @@ export const data : menuItemType[]=[
     name:"Contacto",
     url:routeEnum.CONTACT,
     icon:Contact,
-  }
+  },
+  
 ]
