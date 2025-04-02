@@ -8,7 +8,7 @@ export function Skills(){
     </div>
 
     <div className=" flex  w-full justify-center  px-5  gap-1" >
-      <div className="grid grid-cols-1 md:grid-cols-2   gap-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:md:grid-cols-3  gap-4 ">
         {
           data.map((item)=>(
 
