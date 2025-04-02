@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-
+import  profilePhoto  from "@/assets/images/profile_final.webp";
 export function AboutMe() {
 
   return (
@@ -14,7 +14,7 @@ export function AboutMe() {
       <Card className="bg-sidebar dark:bg-black opacity-85 border dark:border-gray-900 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl hover:opacity-100 transition-opacity duration-300 ease-in-out">
         <CardHeader className="flex flex-col items-center text-center">
           <Avatar className="w-64 h-64 mb-4  "  >
-            <AvatarImage src="/src/assets/images/profile_final.webp"/>
+            <AvatarImage src={profilePhoto}/>
             <AvatarFallback>
                 CN
             </AvatarFallback>
