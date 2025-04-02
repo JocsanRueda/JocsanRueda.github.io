@@ -148,7 +148,7 @@ export function ContactPage() {
           </div>
         </div>
 
-        {/* Columna de Formulario */}
+        
         <div>
           <FormProvider {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -162,7 +162,7 @@ export function ContactPage() {
                     <FormItem className="my-3">
                       <FormLabel className='block text-sm text-gray-600 dark:text-gray-400 '>Nombre</FormLabel>
                       <FormControl>
-                        <Input placeholder="tu nombre" {...field} />
+                        <Input placeholder="Nombre" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
