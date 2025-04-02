@@ -132,7 +132,7 @@ export function ContactPage() {
         <div>
           <FormProvider {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
-              <Card className="bg-sidebar dark:bg-black opacity-85 border dark:border-gray-900 ">
+              <Card className="bg-sidebar dark:bg-black opacity-85 border dark:border-gray-900 hover:opacity-100 transition-opacity">
                 <CardHeader>
                   <CardTitle className="text-2xl dark:text-white">Envía un Mensaje</CardTitle>
                 </CardHeader>
