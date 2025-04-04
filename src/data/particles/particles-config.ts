@@ -24,7 +24,7 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
       },
       modes: {
         push: {
-          quantity: 2,
+          quantity: 1,
         },
         grab: {
           distance: 100,
@@ -63,6 +63,7 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
           area: 800,
         },
         value: 80,
+     
       },
       opacity: {
         value: {
@@ -84,7 +85,8 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
         options: {
           particles: {
             number: {
-              value: 60, 
+              value: 60,
+              limit: 70, 
             }
           },
         },
@@ -95,6 +97,7 @@ const commonParticlesConfig=(bgColor:string,pColor:string,lColor:string) : ISour
           particles: {
             number: {
               value: 80, 
+              limit: 100,
             },
             
           },
