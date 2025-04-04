@@ -11,7 +11,7 @@ export function AboutMe() {
         <h1 className="text-4xl font-bold mb-10">Sobre mí</h1>
       </div>
 
-      <Card className="bg-sidebar dark:bg-black opacity-85 border dark:border-gray-900 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl hover:opacity-100 transition-opacity duration-300 ease-in-out">
+      <Card className="bg-sidebar dark:bg-black opacity-85 border dark:border-gray-900 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl hover:opacity-100 transition-opacity duration-300 ease-in-out rounded-md shadow-none">
         <CardHeader className="flex flex-col items-center text-center">
           <Avatar className="w-64 h-64 mb-4  "  >
             <AvatarImage src={profilePhoto} alt="profile photo"/>
