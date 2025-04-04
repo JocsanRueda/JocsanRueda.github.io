@@ -147,7 +147,6 @@ export function ContactPage() {
             
           </div>
         </div>
-
         
         <div>
           <FormProvider {...form}>
