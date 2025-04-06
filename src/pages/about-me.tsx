@@ -5,7 +5,7 @@ import  profilePhoto  from "@/assets/images/profile_final.webp";
 export function AboutMe() {
 
   return (
-    <div className="flex flex-col items-center justify-center py-16 px-6">
+    <div className="h-full flex flex-col justify-center items-center gap-5  my-10 md:my-20 px-5">
      
       <div>
         <h1 className="text-4xl font-bold mb-10">Sobre mí</h1>
