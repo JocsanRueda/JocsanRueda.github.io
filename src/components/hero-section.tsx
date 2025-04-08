@@ -48,7 +48,7 @@ export default function HeroSection() {
         <div className="text-balance">
           <p className= "lg:text-2xl  mt-2  dark:text-gray-400"
             
-          >Ingeniero en sistemas , desarrollador full-stack </p>
+          >Ingeniero de software, desarrollador full-stack </p>
         </div>
        
         <Button className="mt-6 border  text-teal-30 bg-teal-300text-black dark:hover:text-black hover:text-white dark:border-teal-300 border-gray-700" onClick={handleClick} name="skills-button">
