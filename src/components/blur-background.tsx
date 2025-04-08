@@ -27,7 +27,7 @@ export default function BlurBackground() {
   
   return (
     <div
-      className={cn("fixed inset-0 w-full h-full pointer-events-none transition-all duration-700 ease-in-out ",blurClass)}
+      className={cn("fixed inset-0 w-full h-full pointer-events-none transition-[backdrop-filter] duration-700 ease-in-out ",blurClass)}
   
       style={{
         zIndex:-2,  

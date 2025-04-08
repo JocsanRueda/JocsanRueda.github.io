@@ -112,7 +112,7 @@ export function ProjectDetail() {
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-auto object-cover transition-all duration-300 transform hover:scale-105"
+                className="w-full h-auto object-cover transition-transform duration-300 transform hover:scale-105"
                 style={{aspectRatio:"16/9"}}
                 loading="lazy"
               />

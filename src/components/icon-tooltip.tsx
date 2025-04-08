@@ -25,7 +25,7 @@ export function IconTooltip({item,className,classNameIcon}:IconTooltipProps) {
         <TooltipTrigger onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd} className={cn(className)}><IconComponent className={cn("p-1 rounded transition-all  hover:text-white dartk:hover:text-white",
+          onTouchEnd={handleTouchEnd} className={cn(className)}><IconComponent className={cn("p-1 rounded transition-colors  hover:text-white dartk:hover:text-white",
             hobered && item.color,classNameIcon,
           )} size={28} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false) } /></TooltipTrigger>
         {
