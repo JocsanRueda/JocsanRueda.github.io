@@ -34,7 +34,7 @@ export default function CardProjects({
     <div className={cn("bg-sidebar dark:bg-black  dark:text-white  max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col gap-7 border rounded-md  dark:border-gray-900 transition-opacity hover:opacity-100",className)} id={id} >
 
       <CardContent className="-px-6 overflow-hidden rounded-t-md ">
-        <img src={imageUrl} alt="image-project" className=" -rounded-t-md transition-transform duration-300 ease-in-out transform hover:scale-115 " style={{aspectRatio:"16/9"}}  loading="lazy" />
+        <img src={imageUrl} alt="image-project" className=" -rounded-t-md transition-transform duration-300 ease-in-out transform hover:scale-115 " style={{aspectRatio:"16/9",width:"100%", height:"auto"}}   loading="lazy" />
       </CardContent>
       <CardFooter className="mb-3 flex flex-col items-start gap-3">
         <div className="flex flex-col ">
