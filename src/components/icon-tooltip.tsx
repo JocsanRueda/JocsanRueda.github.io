@@ -8,11 +8,12 @@ export type IconTooltipProps = {
   item: iconItem;
   className?: string;
   classNameIcon?: string;
+  hoveredActive?: boolean;
 }
 
-export function IconTooltip({item,className,classNameIcon}:IconTooltipProps) {
+export function IconTooltip({item,className,classNameIcon,hoveredActive=true}:IconTooltipProps) {
   const IconComponent = item.icon;
-  const [hobered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState(false)
 
   const handleMouseEnter = () => setHovered(true);
   const handleMouseLeave = () => setHovered(false);
@@ -21,15 +22,15 @@ export function IconTooltip({item,className,classNameIcon}:IconTooltipProps) {
   return<>
  
     <TooltipProvider >
-      <Tooltip delayDuration={1} open={hobered}  >
+      <Tooltip delayDuration={1} open={hovered}  >
         <TooltipTrigger onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd} className={cn(className)}><IconComponent className={cn("p-1 rounded transition-colors  hover:text-white dartk:hover:text-white",
-            hobered && item.color,classNameIcon,
+          onTouchEnd={handleTouchEnd} className={cn(className)}><IconComponent className={cn("p-1 rounded transition-colors ",hoveredActive && " hover:text-white dartk:hover:text-white",
+            hovered && item.color,classNameIcon,
           )} size={28} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false) } /></TooltipTrigger>
         {
-          hobered && createPortal(
+          hovered && createPortal(
             <TooltipContent  side="top"
               sideOffset={6} >
               <p className="bg-sidebar border rounded px-1 font-light text-black dark:text-white ">{item.name}</p>

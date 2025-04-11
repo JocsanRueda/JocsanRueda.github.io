@@ -14,10 +14,8 @@ import {
   CheckCheck,
   X,
   Clipboard,
-  FileText,
   Smartphone
 } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa";
 import { FormProvider, useForm } from "react-hook-form";
 import { contactSchema } from "@/schemas/contact.schema";
 import { z } from "zod";
@@ -27,7 +25,6 @@ import emailjs from "@emailjs/browser";
 import { Toaster } from "sonner";
 import { toast } from "sonner"
 import { useTheme } from "@/components/theme-provider";
-import { linksEnum } from "@/data/links/data";
 export function ContactPage() {
  
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -132,20 +129,7 @@ export function ContactPage() {
               </div>
             </div>
           </div>
-    
-          <div className="flex space-x-6 my-5">
-
-            <Button variant="link" className="border hover:bg-blue-800 hover:text-white" name="linkedin-button">
-              <FaLinkedin className="mr-2 h-4 w-4" />
-              <a href={linksEnum.LINKEDIN} target="_blank" rel="noopener noreferrer" >Linkedin</a>
-            </Button>
-
-            <Button variant="link" className="border hover:bg-green-800 hover:text-white" name="github-button">
-              <FileText className="mr-2 h-4 w-4" />
-              <a href={linksEnum.CURIICULUM} target="_blank" rel="noopener noreferrer" >Curriculum</a>
-            </Button>
-            
-          </div>
+     
         </div>
         
         <div>
