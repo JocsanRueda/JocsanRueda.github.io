@@ -76,7 +76,7 @@ export function ContactPage() {
     <div className=" flex items-center justify-center px-5 p sm:px-4 py-10  my-15 sm:my-20 ">
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 sm:gap-6 lg:gap-12 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl">
 
-        <div className="space-y-8 mx-1.5">
+        <div className="space-y-8 mx-1.5 my-8">
           <div className="space-y-4">
             <h2 className=" text-2xl md:*:text-4xl font-bold text-center md:text-left">Contactate</h2>
           
