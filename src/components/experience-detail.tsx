@@ -87,16 +87,16 @@ export function ExperienceDetail() {
           
           <div className="flex gap-4">
             {experience.linkedinUrl && (
-              <Button variant="ghost" className="border hover:bg-gray-800 hover:text-white" name="linkedin-button">
-                <FaLinkedin className="mr-2 h-4 w-4" />
-                <a href={experience.linkedinUrl}>LinkedIn</a>
-              </Button>
+              
+              <a href={experience.linkedinUrl}><Button variant="ghost" className="border hover:bg-gray-800 hover:text-white" name="linkedin-button">
+                <FaLinkedin className="mr-2 h-4 w-4" />LinkedIn   </Button></a>
+           
             )}
             {experience.companyUrl && (
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white" name="company-button">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                <a href={experience.companyUrl}>Sitio web</a>
-              </Button>
+             
+              <a href={experience.companyUrl}> <Button className="bg-blue-600 hover:bg-blue-700 text-white" name="company-button">
+                <ExternalLink className="mr-2 h-4 w-4" />Sitio web </Button></a>
+             
             )}
           </div>
         </div>

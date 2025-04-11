@@ -89,16 +89,16 @@ export function ProjectDetail() {
           
           <div className="flex gap-4">
             {project.githubUrl && (
-              <Button variant="ghost" className="border hover:bg-gray-800 hover:text-white" name="github-button">
-                <FaGithub className="mr-2 h-4 w-4" />
-                <a href={project.githubUrl}>Repositorio</a>
-              </Button>
+              
+              <a href={project.githubUrl}><Button variant="ghost" className="border hover:bg-gray-800 hover:text-white" name="github-button">
+                <FaGithub className="mr-2 h-4 w-4" />Repositorio</Button></a>
+              
             )}
             {project.liveUrl && (
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white" name="live-button">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                <a href={project.liveUrl}>Sitio web </a>
-              </Button>
+              
+              <a href={project.liveUrl}><Button className="bg-blue-600 hover:bg-blue-700 text-white" name="live-button">
+                <ExternalLink className="mr-2 h-4 w-4" />Sitio web   </Button></a>
+            
             )}
             
           </div>
